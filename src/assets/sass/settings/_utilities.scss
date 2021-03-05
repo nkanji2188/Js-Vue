@@ -1,0 +1,67 @@
+// variables
+$palette-yellow: #fec617;
+$palette-orange: #e27c1c;
+$palette-brown: #7d5740;
+$color-bg-yellow: $palette-yellow;
+$color-bg-orange: $palette-orange;
+$color-bg-brown: $palette-brown;
+$color-font-yellow: $palette-yellow;
+$color-font-orange: $palette-orange;
+$color-font-brown: $palette-brown;
+
+// utilities
+.mlr-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.text-a-c {
+  text-align: center !important;
+}
+.fw-b {
+  font-weight: bold !important;
+}
+.text-large{
+  font-size: 2rem !important;
+  font-weight: bold !important;
+}
+.text-small{
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+}
+
+.mts {
+  margin-top: 20px !important;
+}
+.mtm {
+  margin-top: 40px !important;
+}
+.mtl {
+  margin-top: 60px !important;
+}
+.mbs {
+  margin-bottom: 20px !important;
+}
+.mbm {
+  margin-bottom: 40px !important;
+}
+.mbl {
+  margin-bottom: 60px !important;
+}
+.pts {
+  padding-top: 20px !important;
+}
+.ptm {
+  padding-top: 40px !important;
+}
+.ptl {
+  padding-top: 60px !important;
+}
+.pbs {
+  padding-bottom: 20px !important;
+}
+.pbm {
+  padding-bottom: 40px !important;
+}
+.pbl {
+  padding-bottom: 60px !important;
+}

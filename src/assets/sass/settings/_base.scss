@@ -1,0 +1,18 @@
+html {
+  // ルートのフォントサイズ10px
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  color: #2c3e50;
+  // ルートのフォントサイズ10px,1.4remで14px
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+a {
+	text-decoration: none;
+}

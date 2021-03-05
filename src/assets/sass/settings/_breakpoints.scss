@@ -1,0 +1,6 @@
+html{
+	//スマホでルートのフォントサイズを大きく
+  @media screen and (max-width: 960px) {
+     font-size: 75%;   
+  }
+}
