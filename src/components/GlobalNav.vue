@@ -28,14 +28,14 @@
   }
   &__item {
     & + & {
-      border-left: 1px solid $color-font-main;
+      // border-left: 1px solid $color-font-main;
       padding-left: 10px;
       margin-left: 10px;
     }
   }
   &__link {
     font-weight: bold;
-    color: $color-font-main;
+    // color: $color-font-main;
   }
 }
 </style>

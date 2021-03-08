@@ -19,7 +19,6 @@
 <script>
 import GlobalNav from './components/GlobalNav.vue'
 import Header from './components/Header.vue'
-// import Js from './assets/js/jquery-3.4.1.min'
 
 export default {
   name: 'App',
