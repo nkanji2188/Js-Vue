@@ -4,3 +4,21 @@ html{
      font-size: 75%;   
   }
 }
+
+@mixin mqsp {
+  @media screen and (max-width: 767px){
+    @content;
+  }
+}
+
+@mixin mqtb {
+  @media screen and (min-width: 768px){
+    @content;
+  }
+}
+
+@mixin mqpc {
+  @media screen and (min-width: 960px){
+    @content;
+  }
+}

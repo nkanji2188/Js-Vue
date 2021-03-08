@@ -1,0 +1,15 @@
+.section{
+	padding-top: 50px;
+	padding-bottom: 60px;
+	background: rgb(225, 241, 219);
+	// height: 100vh;
+	&__head{
+		margin-bottom: 40px;
+			// background: rgb(243, 175, 175);
+	}
+	&__foot{
+		margin-top: 40px;
+		text-align: right;
+		// background: rgb(81, 226, 226);
+	}
+}

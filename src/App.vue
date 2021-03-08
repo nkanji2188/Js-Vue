@@ -1,30 +1,30 @@
 <template>
   <div id="app">
-    <Header/>
-    <button class="button">jjjjj</button>
-    <!-- <div class="header__ttl02">{{ msg }}</div> -->
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/CountUp">CountUp</router-link> |
-      <router-link to="/for">for</router-link>
-      <router-link to="/for2">for2</router-link>
-      <router-link to="/Todo">Todo</router-link>
-      <router-link to="/Each">Each</router-link>
+    <div class="wrapper">
+      <GlobalNav/>
+      <Header/>
+      <main class="main">
+        <!-- <div class="header__ttl02">{{ msg }}</div> -->
+        <router-view/>
+      </main>
+      <footer class="footer">
+        <p class="text-a-c">@@@@@@@@@</p>
+      </footer>
     </div>
-      <router-view/>
-    <transition mode="out-in">
-    </transition>
   </div>
+  <!-- <transition mode="out-in">
+  </transition> -->
 </template>
 
 <script>
+import GlobalNav from './components/GlobalNav.vue'
 import Header from './components/Header.vue'
 // import Js from './assets/js/jquery-3.4.1.min'
 
 export default {
   name: 'App',
   components: {
+    GlobalNav,
     Header
   },
   data () {
