@@ -1,6 +1,6 @@
 <script></script>
 <template>
-  <div class="CountUp">
+  <div class="CountUp-vue">
     <header class="header">
       <div class="header__inner">
         <h1 class="header__title">Count Up</h1>
@@ -10,17 +10,17 @@
       <section class="section container">
         <div class="section__head">
           <h2 class="df jcsb">
-            <span id="count-record" class="page-headding__text">Best Record : <span>0</span></span>
-            <span id="count-timer" class="page-headding__text">Time : <span>0</span></span>
+            <span class="page-headding__text">Best Record : <span id="count-record">0</span></span>
+            <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
           </h2>
         </div>
 
         <div class="section__body">
           <div id="count-game" class="count-game">
-            <div id="count-numbers" class="count-numbers"></div>
+            <div id="count-numbers"></div>
             <div id="count-start" class="count-start">
-              <p class=""></p>
-              <button class="button count">START</button>
+              <p id="count-start__text" class="count-start__text"></p>
+              <button id="count-button" class="button count">START</button>
             </div>
           </div>
         </div>
@@ -34,50 +34,72 @@
 
 <script>
 export default {
-  mounted: function () {
-
-    $('#count-start').hide();
+  mounted: function() {
 
     var countNum;
     var cardArray;
     var time;
     var timer;
-    init ();
+    init();
 
-    function init () {
+    function init() {
       // 初期化
       countNum = 1;
       cardArray = [];
       time = 0;
 
-      for (var i = 0; i <= 24; i++) {
+      for(var i = 0; i <= 24; i ++) {
         cardArray.push(i);
       }
-
-      for (var i = 0; i < cardArray.length; i++){
+      for(var i = 0; i < cardArray.length; i ++){
         var tmpNum = cardArray[i];
         var r = Math.floor (Math.random() * cardArray.length);
-
         cardArray[i] = cardArray[r];
         cardArray[r] = tmpNum;
       }
 
       $('#count-numbers').html('');
 
-      for (var i = 0; i <= 24; i++) {
-        var cardNum = cardArray[i];
-        $('#count-numbers').append(`<div>${cardNum}</div>`);
-        // $('#count-numbers').prepend('<div>' + cardNum + '</div>');
-        // $('#count-numbers').prepend(`<div>${cardNum}</div>`);
+      for(var i = 0; i <= 24; i++) {
+        var cardNum = cardArray[i] + 1;
+        $('#count-numbers').prepend(`<div class="count-numbers__card">${cardNum}</div>`);
       }
+    } // end function init ()
 
-    }
+    $('#count-button').on('click', function() {
+      $('#count-start').hide();
+      $('.count-numbers__card').on('click', function() {
+        var num = $(this).html();
+        if (num == countNum){
+          $(this).addClass('hit');
+          countNum ++;
+        }
+      });
+      timerFunc();
+      timer = setInterval(timerFunc, 10);
+    });
+
+    function timerFunc() {
+      time ++;
+      $('#count-timer').html(time);
+      if(countNum == 5) {
+        clearInterval(timer);
+        $('#count-start__text').html(`Your Record : ${$('#count-timer').html()}` );
+        $('#count-button').html('PLAY AGAIN');
+        $('#count-start').show();
+
+        if($('#count-record').html() - $('#count-timer').html() > 0 || $('#count-record').html() == 0 ) {
+          $('#count-record').html($('#count-timer').html());
+        }
+        init();
+      };
+    };
 
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .count-game{
   position: relative;
 }
@@ -89,9 +111,16 @@ export default {
   width: 500px;
   height: 500px;
   background: $color-bg-brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__text{
+  color: $color-font-yellow;
+  }
 }
 
-.count-numbers{
+.count-numbers__card{
   width: 99px;
   height: 64px;
   padding-top: 35px;
@@ -104,9 +133,11 @@ export default {
   text-align: center;
   float: left;
   cursor: pointer;
-  &__hit{
+  transition: 0.1s;
+  &.hit{
     background: $color-bg-orange;
     color: $color-font-yellow;
   }
 }
+
 </style>
