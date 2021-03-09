@@ -13,7 +13,7 @@
 .header {
   padding-top: 25px;
   padding-bottom: 10px;
-  // background: $color-bg-orange;
+  background: $color-bg-orange;
   &__title {
     font-size: 70px;
     color: #555;

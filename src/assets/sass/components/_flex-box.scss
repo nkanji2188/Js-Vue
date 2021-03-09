@@ -5,35 +5,12 @@
     justify-content: space-between;
   }
 }
-// 初期値
-// flex: 0 1 auto;
-// flex: 1はflex: 1 1 0と同じ
 .column {
   @include mqpc{
     // width: calc(25% - 10px);
     flex: 0 0 calc(25% - 10px); 
     margin-bottom: 23px;
-    border: 1px solid #000;
   }
 }
 
-
-// .column2 {
-//   background: rgb(236, 105, 105);
-//   @include mqpc{
-//     flex-grow: 1;
-//   }
-// }
-// .column {
-// 	padding: 30px;
-//   @media screen and(max-width: 959px) {
-// 		& + & {
-// 			margin-top: 50px;
-// 		}
-// 	}
-//   @media screen and(min-width: 960px) {
-//     width: calc(50% - 10px);  
-//   }
-//   background: rgb(236, 105, 105);
-// }
 

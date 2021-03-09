@@ -1,9 +1,18 @@
 <template>
   <div class="CountUp">
-    <h2 class="page__head">CountUp</h2>
-    <p class="pts pbs text-a-c text-large">jijoi</p>
-    <p class="pts pbs text-a-c fw-b">訓練校一か月目に作成した</p>
-    <div class="box"></div>
+    <section class="section container">
+      <div class="section__head">
+        <h2 class="page-headding">
+          <span class="page-headding__text">HOME</span>
+        </h2>
+      </div>
+      <div class="section__body">
+
+      </div>
+      <div class="section__foot">
+        <a class="button" href="">jjjjj</a>
+      </div>
+    </section>
   </div>
 </template>
 

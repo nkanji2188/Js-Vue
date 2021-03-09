@@ -6,7 +6,8 @@ import jQuery from 'jquery'
 global.jquery = jQuery
 global.$ = jQuery
 window.$ = window.jQuery = require('jquery')
-// require('@/?Zassets/sass/common.scss')
+require('./assets/sass/common.scss')
+
 Vue.config.productionTip = false
 
 new Vue({

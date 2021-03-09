@@ -5,7 +5,8 @@ module.exports = {
   css: {
     loaderOptions: {
       sass:{
-        prependData: `@import "@/assets/sass/common.scss";`,
+        // 変数など具体的なcssをはかないもの、他はmain.jsに記載
+        prependData: `@import "@/assets/sass/settings/_prepends.scss";`,
         sassOptions: {
           importer: globImporter()
         }
