@@ -7,7 +7,9 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  // color: #2c3e50;
+  color: $color-font-brown;
+  background: $color-bg-yellow;
 
   // ルートのフォントサイズ10px,1.4remで14px
   font-size: 1.4rem;

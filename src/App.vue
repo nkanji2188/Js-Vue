@@ -2,29 +2,29 @@
   <div id="app">
     <div class="wrapper">
       <GlobalNav/>
-      <Header/>
-      <main class="main">
-        <!-- <div class="header__ttl02">{{ msg }}</div> -->
-        <router-view/>
-      </main>
+      <!-- <Header/> -->
+      <!-- <main class="main">
+      </main> -->
+      <router-view/>
       <footer class="footer">
-        <p class="text-a-c">@@@@@@@@@</p>
+        <p class="text-a-c"></p>
       </footer>
     </div>
   </div>
+  <!-- <div>{{ msg }}</div> -->
   <!-- <transition mode="out-in">
   </transition> -->
 </template>
 
 <script>
 import GlobalNav from './components/GlobalNav.vue'
-import Header from './components/Header.vue'
+// import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    GlobalNav,
-    Header
+    GlobalNav
+    // Header
   },
   data () {
     return {
