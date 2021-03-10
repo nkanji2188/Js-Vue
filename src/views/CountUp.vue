@@ -62,38 +62,55 @@ export default {
 
       for(var i = 0; i <= 24; i++) {
         var cardNum = cardArray[i] + 1;
-        $('#count-numbers').prepend(`<div class="count-numbers__card">${cardNum}</div>`);
+        $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`);
       }
-    } // end function init ()
+    }; // end function init ()
 
     $('#count-button').on('click', function() {
-      $('#count-start').hide();
-      $('.count-numbers__card').on('click', function() {
+
+      $('.count-numbers__card-inner').on('click', function() {
         var num = $(this).html();
         if (num == countNum){
           $(this).addClass('hit');
+          $(this).animate({'margin-left': '+=250' }, 200);
+          // $('#count-numbers').prepend(`<div class="count-numbers__card"></div>`);
+
           countNum ++;
         }
       });
-      timerFunc();
-      timer = setInterval(timerFunc, 10);
+
+      var count = 2;
+      // var count = 4;
+      countFunc();
+      var downTimer = setInterval(countFunc, 1000);
+      function countFunc() {
+        count--;
+        $('#count-button').html(count);
+        $('#count-start__text').hide();
+        if(count == 0){
+          clearInterval(downTimer);
+          $('#count-start').hide();
+          timerFunc();
+          timer = setInterval(timerFunc, 10);
+        }
+      };
     });
 
-    function timerFunc() {
-      time ++;
-      $('#count-timer').html(time);
-      if(countNum == 5) {
-        clearInterval(timer);
-        $('#count-start__text').html(`Your Record : ${$('#count-timer').html()}` );
-        $('#count-button').html('PLAY AGAIN');
-        $('#count-start').show();
+    // function timerFunc() {
+    //   time ++;
+    //   $('#count-timer').html(time);
+    //   if(countNum == 26) {
+    //     clearInterval(timer);
+    //     $('#count-start__text').html(`Your Record : ${$('#count-timer').html()}` ).show();
+    //     $('#count-button').html('PLAY AGAIN');
+    //     $('#count-start').show();
 
-        if($('#count-record').html() - $('#count-timer').html() > 0 || $('#count-record').html() == 0 ) {
-          $('#count-record').html($('#count-timer').html());
-        }
-        init();
-      };
-    };
+    //     if($('#count-record').html() - $('#count-timer').html() > 0 || $('#count-record').html() == 0 ) {
+    //       $('#count-record').html($('#count-timer').html());
+    //     }
+    //     init();
+    //   }
+    // };
 
   }
 }
@@ -120,24 +137,56 @@ export default {
   }
 }
 
+#count-numbers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  perspective: 500px;
+}
+
 .count-numbers__card{
-  width: 99px;
-  height: 64px;
-  padding-top: 35px;
+  flex: 0 0 20%;
+  height: 100px;
+  line-height: 100px;
   font-size: 1.8rem;
   font-weight: bold;
   background: $color-bg-brown;
   color: $color-font-yellow;
-  margin-right: 1px;
-  margin-bottom: 1px;
+  // margin-right: 1px;
+  // margin-bottom: 1px;
   text-align: center;
-  float: left;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.5s;
+  // &::after{
+  //   content:"";
+  //   display: block;
+  //   padding-top: 50%;
+  // }
   &.hit{
     background: $color-bg-orange;
     color: $color-font-yellow;
+    position: absolute;
+    // transform: rotatex(360deg) rotateY(360deg);
+    // transform: rotateY(450deg);
   }
 }
-
+// .count-numbers__card{
+//   width: 99px;
+//   height: 64px;
+//   padding-top: 35px;
+//   font-size: 1.8rem;
+//   font-weight: bold;
+//   background: $color-bg-brown;
+//   color: $color-font-yellow;
+//   margin-right: 1px;
+//   margin-bottom: 1px;
+//   text-align: center;
+//   float: left;
+//   cursor: pointer;
+//   transition: 0.1s;
+//   &.hit{
+//     background: $color-bg-orange;
+//     color: $color-font-yellow;
+//   }
+// }
 </style>
