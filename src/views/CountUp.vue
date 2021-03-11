@@ -72,10 +72,27 @@ export default {
         var num = $(this).html();
         if (num == countNum){
           $(this).addClass('hit');
-          $(this).animate({'margin-left': '+=250' }, 200);
-          // $('#count-numbers').prepend(`<div class="count-numbers__card"></div>`);
-
+          // $(this).hide();
+          // $(this).animate({'margin-left': '+=250' }, 200);
+          $(this).parent().prepend('<div class="count-numbers__card-inner--02"></div>');
+          $('.count-numbers__card-inner--02')
+          // .animate({'margin-left': `+=${Math.random()}00px`}, 200)
+          // .animate({'margin-left': '+=' + Math.floor( Math.random() * (101-1)+1) + '00px' }, 400)
+          .animate({}, 10, function(){
+            if ( (Math.floor (Math.random() * (11-1)+1) % 2) == 0 ){
+              $(this).css('transform', 'translate(' + Math.floor( Math.random() * (51-1)+1) + '00px,' + Math.floor( Math.random() * (51-1)+1) + '00px)')
+            }else{
+              $(this).css('transform', 'translate(' + Math.floor( Math.random() * (-101-1)+1) + '00px,' + Math.floor( Math.random() * (-101-1)+1) + '00px)')
+            }
+          })
+          .addClass('hit--02');
           countNum ++;
+          // .animate({'margin-left': '+=' + Math.floor( Math.random() * (101-1)+1) + '00px' }, 400, function(){
+          //   $(this).css('transform', 'translate(10px, 800px)')
+          // })
+          // .animate({'transform': 'translate(100px)' }, 200)
+          // .css('transform', 'translate(100px, 200px)')
+          // $('#count-numbers').prepend(`<div class="count-numbers__card"></div>`);
         }
       });
 
@@ -117,6 +134,9 @@ export default {
 </script>
 
 <style lang="scss">
+.CountUp-vue{
+  overflow: hidden;
+}
 .count-game{
   position: relative;
 }
@@ -162,13 +182,38 @@ export default {
   //   display: block;
   //   padding-top: 50%;
   // }
-  &.hit{
+  position: relative;
+}
+.hit{
     background: $color-bg-orange;
     color: $color-font-yellow;
-    position: absolute;
+    // position: absolute;
     // transform: rotatex(360deg) rotateY(360deg);
     // transform: rotateY(450deg);
   }
+.count-numbers__card-inner{
+  cursor: pointer;
+}
+.count-numbers__card-inner--02{
+  width: 100%;
+  height: 100%;
+  background: $color-bg-orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 1s;
+}
+.hit--02{
+  transform: rotatex(420deg) rotateY(300deg);
+  // background: $color-bg-orange;
+  color: $color-font-yellow;
+  background: rgb(254, 0, 0);
+  opacity: 0;
+  // transform: translate(100px, 200px);
+    // position: absolute;
+    // transform: rotatex(360deg) rotateY(360deg);
+    // transform: rotateY(450deg);
 }
 // .count-numbers__card{
 //   width: 99px;
