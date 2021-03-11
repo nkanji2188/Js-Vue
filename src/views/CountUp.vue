@@ -76,23 +76,24 @@ export default {
           // $(this).animate({'margin-left': '+=250' }, 200);
           $(this).parent().prepend('<div class="count-numbers__card-inner--02"></div>');
           $('.count-numbers__card-inner--02')
-          // .animate({'margin-left': `+=${Math.random()}00px`}, 200)
-          // .animate({'margin-left': '+=' + Math.floor( Math.random() * (101-1)+1) + '00px' }, 400)
-          .animate({}, 10, function(){
-            if ( (Math.floor (Math.random() * (11-1)+1) % 2) == 0 ){
-              $(this).css('transform', 'translate(' + Math.floor( Math.random() * (51-1)+1) + '00px,' + Math.floor( Math.random() * (51-1)+1) + '00px)')
-            }else{
-              $(this).css('transform', 'translate(' + Math.floor( Math.random() * (-101-1)+1) + '00px,' + Math.floor( Math.random() * (-101-1)+1) + '00px)')
-            }
+
+          .animate({}, 100, function(){
+            $(this).css('transform', 'rotateX(1020deg) rotateY(1020deg)' )
           })
-          .addClass('hit--02');
+          .animate({}, 1000, function(){
+            $(this).css('transform', `translate( ${Math.floor( Math.random() * (5001-1)+1)}px, ${Math.floor( Math.random() * (5001-1)+1)}px)` )
+            // $(this).css('transform', `rotateX(120deg) rotateY(120deg) translate( ${Math.floor( Math.random() * (5001-1)+1)}px, ${Math.floor( Math.random() * (5001-1)+1)}px)` )
+            // $(this).css('transform', 'translate(' + Math.floor( Math.random() * (51-1)+1) + '0px,' + Math.floor( Math.random() * (51-1)+1) + '0px)')
+         // if ( (Math.floor (Math.random() * (11-1)+1) % 2) == 0 ){
+            // }else{
+            //   $(this).css('transform', 'translate(' + Math.floor( Math.random() * (-101-1)+1) + '0px,' + Math.floor( Math.random() * (-101-1)+1) + '0px)')
+            // }
+          })
+          // transform: rotateX(420deg) rotateY(300deg) translate(100px, 200px);
+          .addClass('hit02');
           countNum ++;
-          // .animate({'margin-left': '+=' + Math.floor( Math.random() * (101-1)+1) + '00px' }, 400, function(){
-          //   $(this).css('transform', 'translate(10px, 800px)')
-          // })
-          // .animate({'transform': 'translate(100px)' }, 200)
-          // .css('transform', 'translate(100px, 200px)')
-          // $('#count-numbers').prepend(`<div class="count-numbers__card"></div>`);
+
+              // .animate({'margin-left': '+=' + Math.floor( Math.random() * (101-1)+1) + '00px' }, 400)
         }
       });
 
@@ -204,12 +205,12 @@ export default {
   z-index: 1;
   transition: 1s;
 }
-.hit--02{
-  transform: rotatex(420deg) rotateY(300deg);
+.hit02{
+  transform: rotateX(420deg) rotateY(300deg) translate(100px, 200px);
   // background: $color-bg-orange;
   color: $color-font-yellow;
-  background: rgb(254, 0, 0);
-  opacity: 0;
+  background: rgb(249, 21, 21);
+  // opacity: 0;
   // transform: translate(100px, 200px);
     // position: absolute;
     // transform: rotatex(360deg) rotateY(360deg);
