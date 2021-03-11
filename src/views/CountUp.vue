@@ -76,10 +76,10 @@ export default {
           // $(this).animate({'margin-left': '+=250' }, 200);
           $(this).parent().prepend('<div class="count-numbers__card-inner--02"></div>');
           $('.count-numbers__card-inner--02')
-
-          .animate({}, 100, function(){
-            $(this).css('transform', 'rotateX(1020deg) rotateY(1020deg)' )
-          })
+          .animate({rotate:'90deg'},1000)
+          // .animate({}, 100, function(){
+          //   $(this).css('transform', 'rotateX(1020deg) rotateY(1020deg)' )
+          // })
           .animate({}, 1000, function(){
             $(this).css('transform', `translate( ${Math.floor( Math.random() * (5001-1)+1)}px, ${Math.floor( Math.random() * (5001-1)+1)}px)` )
             // $(this).css('transform', `rotateX(120deg) rotateY(120deg) translate( ${Math.floor( Math.random() * (5001-1)+1)}px, ${Math.floor( Math.random() * (5001-1)+1)}px)` )
