@@ -35,7 +35,6 @@
 <script>
 export default {
   mounted: function() {
-
     var countNum;
     var cardArray;
     var time;
@@ -72,40 +71,40 @@ export default {
         var num = $(this).html();
         if (num == countNum){
           $(this).addClass('hit');
-          // $(this).hide();
-          // $(this).animate({'margin-left': '+=250' }, 200);
           $(this).parent().prepend('<div class="count-numbers__card-inner--02"></div>');
+          // ↑飛んでいくカードを追加して、そこにアニメーションの指定
           $('.count-numbers__card-inner--02')
-          .animate({rotate:'90deg'},1000)
-          // .animate({}, 100, function(){
-          //   $(this).css('transform', 'rotateX(1020deg) rotateY(1020deg)' )
-          // })
-          .animate({}, 1000, function(){
-            $(this).css('transform', `translate( ${Math.floor( Math.random() * (5001-1)+1)}px, ${Math.floor( Math.random() * (5001-1)+1)}px)` )
-            // $(this).css('transform', `rotateX(120deg) rotateY(120deg) translate( ${Math.floor( Math.random() * (5001-1)+1)}px, ${Math.floor( Math.random() * (5001-1)+1)}px)` )
-            // $(this).css('transform', 'translate(' + Math.floor( Math.random() * (51-1)+1) + '0px,' + Math.floor( Math.random() * (51-1)+1) + '0px)')
-         // if ( (Math.floor (Math.random() * (11-1)+1) % 2) == 0 ){
-            // }else{
-            //   $(this).css('transform', 'translate(' + Math.floor( Math.random() * (-101-1)+1) + '0px,' + Math.floor( Math.random() * (-101-1)+1) + '0px)')
-            // }
+          .animate({}, 100, function(){
+            $(this).css('transform', 'rotateX(3600deg) rotateY(1200deg) scale(0.5, 0.5)' )
           })
-          // transform: rotateX(420deg) rotateY(300deg) translate(100px, 200px);
           .addClass('hit02');
-          countNum ++;
 
-              // .animate({'margin-left': '+=' + Math.floor( Math.random() * (101-1)+1) + '00px' }, 400)
+          var animeCount = 0;
+          var animeTimer = setInterval(animeFunc, 500);
+          function animeFunc() {
+            animeCount++;
+            $('.count-numbers__card-inner--02')
+            .animate({}, 1000, function(){
+              $(this).css('transform', `translate( ${Math.floor( Math.random() * 10000) -5000}px, ${Math.floor( Math.random() * 10000) -5000}px)` )
+              $(this).fadeOut();
+          })
+            if(animeCount <= 1){
+              clearInterval(animeTimer);
+            }
+          };
+          countNum ++;
         }
       });
 
-      var count = 2;
+      var countDown = 2;
       // var count = 4;
       countFunc();
       var downTimer = setInterval(countFunc, 1000);
       function countFunc() {
-        count--;
-        $('#count-button').html(count);
+        countDown--;
+        $('#count-button').html(countDown);
         $('#count-start__text').hide();
-        if(count == 0){
+        if(countDown == 0){
           clearInterval(downTimer);
           $('#count-start').hide();
           timerFunc();
@@ -188,9 +187,6 @@ export default {
 .hit{
     background: $color-bg-orange;
     color: $color-font-yellow;
-    // position: absolute;
-    // transform: rotatex(360deg) rotateY(360deg);
-    // transform: rotateY(450deg);
   }
 .count-numbers__card-inner{
   cursor: pointer;
@@ -206,10 +202,11 @@ export default {
   transition: 1s;
 }
 .hit02{
-  transform: rotateX(420deg) rotateY(300deg) translate(100px, 200px);
+  // transform: rotateX(420deg) rotateY(300deg) translate(100px, 200px);
   // background: $color-bg-orange;
-  color: $color-font-yellow;
+  // color: $color-font-yellow;
   background: rgb(249, 21, 21);
+  pointer-events: none;
   // opacity: 0;
   // transform: translate(100px, 200px);
     // position: absolute;
