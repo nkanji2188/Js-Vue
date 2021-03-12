@@ -3,14 +3,20 @@ $palette-gray: #2c3e50;
 $palette-yellow: #fec617;
 $palette-orange: #e27c1c;
 $palette-brown: #7d5740;
+$palette-red: rgb(249, 21, 21);
 $color-bg-yellow: $palette-yellow;
 $color-bg-orange: $palette-orange;
 $color-bg-brown: $palette-brown;
+$color-bg-red: $palette-red;
 $color-font-main: $palette-gray;
 $color-font-yellow: $palette-yellow;
 $color-font-orange: $palette-orange;
 $color-font-brown: $palette-brown;
+$color-font-red: $palette-red;
 
 .bg-color-brown {
-  background: #7d5740 !important;
+  background: $palette-brown !important;
+}
+.bg-color-red {
+  background: $palette-red !important;
 }

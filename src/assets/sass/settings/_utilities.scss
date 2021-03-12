@@ -18,12 +18,29 @@
   font-weight: bold !important;
 }
 .df{
-  display: flex;
+  display: flex !important;
 }
 .jcsb{
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
-
+.display-none{
+  display: none !important;
+}
+.displey-block{
+  display: block !important;
+}
+.opacity-0{
+  opacity: 0 !important;
+}
+.opacity-1{
+  opacity: 1 !important;
+}
+.rotatez10{
+  transform: rotateZ(10deg);
+}
+.rotatez-7{
+  transform: rotateZ(-7deg);
+}
 .mts {
   margin-top: 20px !important;
 }

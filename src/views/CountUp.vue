@@ -11,7 +11,7 @@
         <div class="section__head">
           <h2 class="df jcsb">
             <span class="page-headding__text">Best Record : <span id="count-record">0</span></span>
-            <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
+            <!-- <span class="page-headding__text">Time : <span id="count-timer">0</span></span> -->
           </h2>
         </div>
 
@@ -20,13 +20,13 @@
             <div id="count-numbers"></div>
             <div id="count-start" class="count-start">
               <p id="count-start__text" class="count-start__text"></p>
+              <!-- <p id="count03" class="count03">3</p> -->
               <button id="count-button" class="button count">START</button>
             </div>
           </div>
         </div>
-
-        <div class="section__foot">
-        </div>
+        <!-- <div class="section__foot">
+        </div> -->
       </section>
     </main>
   </div>
@@ -39,6 +39,7 @@ export default {
     var cardArray;
     var time;
     var timer;
+    var start = '#count-start';
     init();
 
     function init() {
@@ -66,71 +67,91 @@ export default {
     }; // end function init ()
 
     $('#count-button').on('click', function() {
-
+      init();
       $('.count-numbers__card-inner').on('click', function() {
         var num = $(this).html();
         if (num == countNum){
-          $(this).addClass('hit');
-          $(this).parent().prepend('<div class="count-numbers__card-inner--02"></div>');
-          // ↑飛んでいくカードを追加して、そこにアニメーションの指定
-          $('.count-numbers__card-inner--02')
-          .animate({}, 100, function(){
-            $(this).css('transform', 'rotateX(3600deg) rotateY(1200deg) scale(0.5, 0.5)' )
-          })
-          .addClass('hit02');
-
-          var animeCount = 0;
-          var animeTimer = setInterval(animeFunc, 500);
-          function animeFunc() {
-            animeCount++;
-            $('.count-numbers__card-inner--02')
-            .animate({}, 1000, function(){
-              $(this).css('transform', `translate( ${Math.floor( Math.random() * 10000) -5000}px, ${Math.floor( Math.random() * 10000) -5000}px)` )
-              $(this).fadeOut();
-          })
-            if(animeCount <= 1){
-              clearInterval(animeTimer);
-            }
-          };
           countNum ++;
+          $(this).addClass('hit');
+          $(this).parent().prepend('<div class="count-numbers__card-inner--02">HIT</div>');
+          // ↑飛んでいくカードを追加、アニメーションの指定
+          $('.count-numbers__card-inner--02')
+          .animate({}, function(){
+            $(this).css('transform', 'rotateX(720deg) rotateY(720deg)' )
+          })
+          // ラスト以外は移動するアニメーション
+          if ( countNum !== 3){
+            var animeCount = 0;
+            var animeTimer = setInterval(animeFunc, 1000);
+            function animeFunc() {
+              animeCount++;
+              $('.count-numbers__card-inner--02')
+              .animate({}, function(){
+                $(this).css('transform', `translate( ${Math.floor( Math.random() * 10000) -5000}px, ${Math.floor( Math.random() * 10000) -5000}px)` );
+                $(this).fadeOut( function(){
+                $(this).remove();
+                });
+            })
+              if(animeCount == 1){
+                clearInterval(animeTimer);
+              }
+            };
+          }
         }
       });
 
-      var countDown = 2;
-      // var count = 4;
+      // カウントダウン
+      var countDown = 5;
       countFunc();
       var downTimer = setInterval(countFunc, 1000);
       function countFunc() {
         countDown--;
-        $('#count-button').html(countDown);
+        $('#count-button').hide();
         $('#count-start__text').hide();
+        if(countDown == 4){
+          $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
+        }
+        if(countDown == 3){
+          $('.count03').remove();
+          $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
+        }
+        if(countDown == 2){
+          $('.count02').remove();
+          $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
+        }
+        if(countDown == 1){
+          $('.count01').remove();
+          $(start).append('<p class="count-go">GO!!</p>');
+        }
         if(countDown == 0){
           clearInterval(downTimer);
-          $('#count-start').hide();
+          $('.count-go').remove();
+          $(start).hide();
           timerFunc();
           timer = setInterval(timerFunc, 10);
         }
       };
     });
 
-    // function timerFunc() {
-    //   time ++;
-    //   $('#count-timer').html(time);
-    //   if(countNum == 26) {
-    //     clearInterval(timer);
-    //     $('#count-start__text').html(`Your Record : ${$('#count-timer').html()}` ).show();
-    //     $('#count-button').html('PLAY AGAIN');
-    //     $('#count-start').show();
-
-    //     if($('#count-record').html() - $('#count-timer').html() > 0 || $('#count-record').html() == 0 ) {
-    //       $('#count-record').html($('#count-timer').html());
-    //     }
-    //     init();
-    //   }
-    // };
+    function timerFunc() {
+      time ++;
+      $('#count-timer').html(time);
+      // カードを当てる回数25枚のときは26
+      if(countNum == 2) {
+        clearInterval(timer);
+        $('#count-start__text').html(`Your Record : ${$('#count-timer').html()}` ).show();
+        $('#count-button').show().html('PLAY AGAIN');
+        $(start).show();
+        $(start).addClass('fade-in');
+        if($('#count-record').html() - $('#count-timer').html() > 0 || $('#count-record').html() == 0 ) {
+          $('#count-record').html($('#count-timer').html());
+        }
+      }
+    };
 
   }
 }
+
 </script>
 
 <style lang="scss">
@@ -152,10 +173,80 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  // opacity: 0;
+  transition: 1s;
   &__text{
   color: $color-font-yellow;
   }
+  &.fade-in{
+    opacity: 1;
+    animation: anime-fade-in 3s;
+  }
 }
+  @keyframes anime-fade-in {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+.count-go, .count01,.count02, .count03{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 50%;
+  color: $color-font-yellow;
+  background: $palette-red;
+  animation: anime-count 1s;
+  opacity: 0;
+}
+.count-go{
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+  font-size: 100px;
+}
+.count01{
+  top: 60%;
+  left: 40%;
+}
+.count02{
+  top: 20%;
+  left: 30%;
+}
+.count03{
+  top: 40%;
+  left: 70%;
+}
+  @keyframes anime-count {
+    0% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+    20% {
+      transform: scale(1.2, 1.2);
+    }
+    80% {
+      transform: scale(0.8, 0.8);
+      opacity: 1;
+    }
+    100% {
+        transform: scale(0.8, 0.8);
+        opacity: 0;
+    }
+  }
 
 #count-numbers{
   display: flex;
@@ -200,19 +291,9 @@ export default {
   left: 0;
   z-index: 1;
   transition: 1s;
+  background: $palette-red;
 }
-.hit02{
-  // transform: rotateX(420deg) rotateY(300deg) translate(100px, 200px);
-  // background: $color-bg-orange;
-  // color: $color-font-yellow;
-  background: rgb(249, 21, 21);
-  pointer-events: none;
-  // opacity: 0;
-  // transform: translate(100px, 200px);
-    // position: absolute;
-    // transform: rotatex(360deg) rotateY(360deg);
-    // transform: rotateY(450deg);
-}
+
 // .count-numbers__card{
 //   width: 99px;
 //   height: 64px;
