@@ -49,7 +49,8 @@ export default {
       countNum = 1;
       cardArray = [];
       time = 0;
-      rendom = Math.ceil(Math.random()*10 + 5);
+      // rendom = Math.ceil(Math.random()*10 + 5);
+      rendom = 2;
 
       for(var i = 0; i <= 24; i ++) {
         cardArray.push(i);
@@ -104,28 +105,29 @@ export default {
       });
 
       // カウントダウン
-      var countDown = 5;
+      var countDown = 2;
+      // var countDown = 5;
       countFunc();
       var downTimer = setInterval(countFunc, 1000);
       function countFunc() {
         countDown--;
         $('#count-button').hide();
         $('#count-start__text').hide();
-        if(countDown == 4){
-          $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
-        }
-        if(countDown == 3){
-          $('.count03').remove();
-          $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
-        }
-        if(countDown == 2){
-          $('.count02').remove();
-          $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
-        }
-        if(countDown == 1){
-          $('.count01').remove();
-          $(start).append('<p class="count-go">GO!!</p>');
-        }
+        // if(countDown == 4){
+        //   $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
+        // }
+        // if(countDown == 3){
+        //   $('.count03').remove();
+        //   $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
+        // }
+        // if(countDown == 2){
+        //   $('.count02').remove();
+        //   $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
+        // }
+        // if(countDown == 1){
+        //   $('.count01').remove();
+        //   $(start).append('<p class="count-go">GO!!</p>');
+        // }
         if(countDown == 0){
           clearInterval(downTimer);
           $('.count-go').remove();
@@ -164,7 +166,7 @@ export default {
 
 .count-up-container {
   max-width: 650px;
-  @include mqtb {
+  @include mqco {
     margin-right: auto;
     margin-left: auto;
   }
@@ -177,27 +179,24 @@ export default {
 #count-numbers{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   perspective: 500px;
 }
 
 .count-numbers__card{
-  flex: 0 0 20%;
-  height: 130px;
-  line-height: 130px;
+  flex: 0 0 calc(20% - 1px);
+  height: 129px;
+  line-height: 129px;
   font-size: 1.8rem;
   font-weight: bold;
   background: $color-bg-brown;
   color: $color-font-yellow;
-  // margin-right: 1px;
-  // margin-bottom: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
   text-align: center;
   cursor: pointer;
   transition: 0.5s;
   position: relative;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   // &::after{
   //   content:"";
   //   display: block;
@@ -212,8 +211,10 @@ export default {
 
 .count-numbers__card-inner{
   // position: absolute;
+  // top: 50%;
   // width: 100%;
   // height: 100%;
+  // transform: translateY(50%);
   // padding-top: calc(50% - 18px);
   cursor: pointer;
 }
@@ -344,13 +345,16 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 100px;
+  font-size: 3rem;
   font-weight: bold;
   color: $color-font-yellow;
   opacity: 0;
   z-index: 2;
   animation: anime-count-end 2s 1s;
   transform-origin: 0 0;
+  @include mqco{
+    font-size: 5rem;
+  }
   & > div{
     transform: rotateZ(-7deg) translate(-50%, -50%);
     transform-origin: 0 0;
