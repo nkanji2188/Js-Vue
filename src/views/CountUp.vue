@@ -65,7 +65,7 @@ export default {
 
       for(var i = 0; i <= 24; i++) {
         var cardNum = cardArray[i] + 1;
-        $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner"></div></div>`);
+        $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`);
       }
     }; // end function init ()
 
@@ -183,8 +183,8 @@ export default {
 
 .count-numbers__card{
   flex: 0 0 20%;
-  // height: 100px;
-  // line-height: 100px;
+  height: 130px;
+  line-height: 130px;
   font-size: 1.8rem;
   font-weight: bold;
   background: $color-bg-brown;
@@ -195,11 +195,14 @@ export default {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
-  &::after{
-    content:"";
-    display: block;
-    padding-top: 100%;
-  }
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // &::after{
+  //   content:"";
+  //   display: block;
+  //   padding-top: 100%;
+  // }
 }
 
 .hit{
@@ -208,6 +211,10 @@ export default {
 }
 
 .count-numbers__card-inner{
+  // position: absolute;
+  // width: 100%;
+  // height: 100%;
+  // padding-top: calc(50% - 18px);
   cursor: pointer;
 }
 
@@ -244,7 +251,7 @@ export default {
 //   }
 // }
 .count-start{
-  opacity: 0;
+  // opacity: 0;
   position: absolute;
   top: 0;
   left: 50%;
