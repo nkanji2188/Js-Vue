@@ -7,7 +7,7 @@
       </div>
     </header>
     <main class="main">
-      <section class="section container">
+      <section class="section count-up-container min-height">
         <div class="section__head">
           <h2 class="df jcsb">
             <span class="page-headding__text">Best Record : <span id="count-record">0</span></span>
@@ -65,7 +65,7 @@ export default {
 
       for(var i = 0; i <= 24; i++) {
         var cardNum = cardArray[i] + 1;
-        $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`);
+        $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner"></div></div>`);
       }
     }; // end function init ()
 
@@ -157,25 +157,105 @@ export default {
 </script>
 
 <style lang="scss">
-.CountUp-vue{
+.CountUp-vue  {
   overflow: hidden;
+  min-height: 100vh;
 }
+
+.count-up-container {
+  max-width: 650px;
+  @include mqtb {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .count-game{
   position: relative;
 }
+
+#count-numbers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  perspective: 500px;
+}
+
+.count-numbers__card{
+  flex: 0 0 20%;
+  // height: 100px;
+  // line-height: 100px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: $color-bg-brown;
+  color: $color-font-yellow;
+  // margin-right: 1px;
+  // margin-bottom: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  &::after{
+    content:"";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.hit{
+  background: $color-bg-orange;
+  color: $color-font-yellow;
+}
+
+.count-numbers__card-inner{
+  cursor: pointer;
+}
+
+.count-numbers__card-inner--02{
+  width: 100%;
+  height: 100%;
+  background: $color-bg-orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  // カードの回転時間
+  transition: 0.5s;
+  // background: $palette-red;
+}
+
+// .count-numbers__card{
+//   width: 99px;
+//   height: 64px;
+//   padding-top: 35px;
+//   font-size: 1.8rem;
+//   font-weight: bold;
+//   background: $color-bg-brown;
+//   color: $color-font-yellow;
+//   margin-right: 1px;
+//   margin-bottom: 1px;
+//   text-align: center;
+//   float: left;
+//   cursor: pointer;
+//   transition: 0.1s;
+//   &.hit{
+//     background: $color-bg-orange;
+//     color: $color-font-yellow;
+//   }
+// }
 .count-start{
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px;
-  height: 500px;
+  width: 650px;
+  height: 650px;
   background: $color-bg-brown;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // opacity: 0;
   transition: 1s;
   &__text{
   color: $color-font-yellow;
@@ -187,13 +267,13 @@ export default {
 }
   @keyframes anime-fade-in {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     80% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;
+      opacity: 1;
     }
   }
 
@@ -250,7 +330,6 @@ export default {
     100% {
         transform: scale(0.8, 0.8);
         opacity: 1;
-        // opacity: 0;
     }
   }
 
@@ -274,9 +353,6 @@ export default {
   }
 }
   @keyframes anime-count-end {
-    // 0% {
-    //   opacity: 0;
-    // }
     0% {
       opacity: 1;
       transform: rotateZ(0) scale(1, 1);
@@ -293,79 +369,9 @@ export default {
     50% {
         transform: scale(1, 1);
         opacity: 1;
-        // opacity: 0;
     }
     100% {
-        // transform: scale(1, 1);
         opacity: 1;
-        // opacity: 0;
     }
   }
-
-#count-numbers{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  perspective: 500px;
-}
-
-.count-numbers__card{
-  flex: 0 0 20%;
-  height: 100px;
-  line-height: 100px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  background: $color-bg-brown;
-  color: $color-font-yellow;
-  // margin-right: 1px;
-  // margin-bottom: 1px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.5s;
-  // &::after{
-  //   content:"";
-  //   display: block;
-  //   padding-top: 50%;
-  // }
-  position: relative;
-}
-.hit{
-    background: $color-bg-orange;
-    color: $color-font-yellow;
-  }
-.count-numbers__card-inner{
-  cursor: pointer;
-}
-.count-numbers__card-inner--02{
-  width: 100%;
-  height: 100%;
-  background: $color-bg-orange;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  // カードの回転時間
-  transition: 0.5s;
-  // background: $palette-red;
-}
-
-// .count-numbers__card{
-//   width: 99px;
-//   height: 64px;
-//   padding-top: 35px;
-//   font-size: 1.8rem;
-//   font-weight: bold;
-//   background: $color-bg-brown;
-//   color: $color-font-yellow;
-//   margin-right: 1px;
-//   margin-bottom: 1px;
-//   text-align: center;
-//   float: left;
-//   cursor: pointer;
-//   transition: 0.1s;
-//   &.hit{
-//     background: $color-bg-orange;
-//     color: $color-font-yellow;
-//   }
-// }
 </style>
