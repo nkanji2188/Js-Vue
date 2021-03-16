@@ -9,9 +9,9 @@
     <main class="main">
       <section class="section count-up-container min-height">
         <div class="section__head">
-          <h2 class="count-page-headding df jcsb">
+          <h2 class="df jcsb">
             <span class="page-headding__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
-            <!-- <span class="page-headding__text">Time : <span id="count-timer">0</span></span> -->
+            <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
           </h2>
         </div>
 
@@ -24,8 +24,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="section__foot">
-        </div> -->
+
       </section>
     </main>
   </div>
@@ -67,28 +66,28 @@ export default {
 
       for(var i = 0; i <= 24; i++) {
         var cardNum = cardArray[i] + 1;
-        $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`);
+        $('#count-numbers')
+        .prepend(
+          `<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`
+          );
       }
     }; // end function init ()
 
     $('#count-button').on('click', function() {
       init();
       $('.count-numbers__card').on('click', function() {
-        $(this).html('11111111');
       // $('.count-numbers__card-inner').on('click', function() {
-        var num = $(this).html();
+        var num = $(this).children().html();
         if (num == countNum){
           countNum ++;
-          // $(this).addClass('hit');
           $(this).addClass('hit');
           $(this)
-          .parent()
           .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>');
           // ↑飛んでいくカードを追加、アニメーションの指定
           $('.count-numbers__card-inner--02')
           .animate({}, function(){
             $(this)
-            .css('transform', 'rotateX(720deg) rotateY(720deg)' )
+            .css('transform', 'rotateX(720deg) rotateY(720deg)')
             .addClass('bg-color-red')
           })
           var animeCount = 0;
@@ -172,19 +171,14 @@ export default {
 
 .count-up-container {
   max-width: 650px;
+  padding-left: 10px;
+  padding-right: 10px;
   @include mqco {
     margin-right: auto;
     margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
-}
-
-.count-page-headding{
-    padding-left: 10px;
-    padding-right: 10px;
-    @media screen and(min-width: 670px) {
-      padding-left: 0;
-      padding-right: 0;
-    }
 }
 
 .count-game{
@@ -194,20 +188,17 @@ export default {
 .count-numbers{
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   perspective: 500px;
 }
 
 .count-numbers__card{
   flex: 0 0 calc(20% - 1px);
-  // line-height: 130px;
   font-size: 1.8rem;
   font-weight: bold;
   background: $color-bg-brown;
   color: $color-font-yellow;
   margin-right: 1px;
   margin-bottom: 1px;
-  // text-align: center;
   cursor: pointer;
   transition: 0.5s;
   position: relative;
@@ -228,9 +219,6 @@ export default {
 
 .count-numbers__card-inner{
   pointer-events: none;
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
 }
 
 .count-numbers__card-inner--02{
@@ -243,7 +231,6 @@ export default {
   z-index: 1;
   // カードの回転時間
   transition: 0.5s;
-  // background: $palette-red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,7 +340,7 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: bold;
   color: $color-font-yellow;
   opacity: 0;
