@@ -5,6 +5,9 @@
 .page-headding__text{
   font-size: 3rem;
   font-weight: bold;
+  @include mqsp {
+    font-size: 2rem;
+  } 
 }
 // .count-up{
 //   display: flex;

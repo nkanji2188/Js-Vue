@@ -35,6 +35,11 @@
 .opacity-1{
   opacity: 1 !important;
 }
+.sp-none{
+  @include mqsp{
+    display: none !important;
+  }
+}
 .rotatez10{
   transform: rotateZ(10deg);
 }

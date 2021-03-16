@@ -9,15 +9,15 @@
     <main class="main">
       <section class="section count-up-container min-height">
         <div class="section__head">
-          <h2 class="df jcsb">
-            <span class="page-headding__text">Best Record : <span id="count-record">0</span></span>
+          <h2 class="count-page-headding df jcsb">
+            <span class="page-headding__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
             <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
           </h2>
         </div>
 
         <div class="section__body">
           <div id="count-game" class="count-game">
-            <div id="count-numbers"></div>
+            <div id="count-numbers" class="count-numbers"></div>
             <div id="count-start" class="count-start">
               <p id="count-start__text" class="count-start__text"></p>
               <button id="count-button" class="button count">START</button>
@@ -34,18 +34,28 @@
 <script>
 export default {
   mounted: function() {
+
+  // var imgWidth = $('.count-numbers').width();
+
+  //   height();
+  //   var imgWidth = $('.button').width();
+  //   function height(){
+  //     $('.count-numbers__card').css('line-height', imgWidth)
+  //   };
+// console.log($(imgWidth).width());
+// console.log(imgHeight)
+// console.log($('#count-button').width())
     var countNum;
     var cardArray;
     var time;
     var timer;
     // カードを当てる回数25枚のときは26
     var rendom;
-    // $('#count-button').html(rendom);
     var start = '#count-start';
     init();
 
+    // 初期化
     function init() {
-      // 初期化
       countNum = 1;
       cardArray = [];
       time = 0;
@@ -67,6 +77,13 @@ export default {
       for(var i = 0; i <= 24; i++) {
         var cardNum = cardArray[i] + 1;
         $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`);
+        // カードの縦横比を指定
+        var cardWidth = $('.count-numbers__card').width();
+        $('.count-numbers__card').css('line-height', cardWidth + 'px');
+        window.addEventListener('resize', function(){
+          var cardWidth = $('.count-numbers__card').width();
+          $('.count-numbers__card').css('line-height', cardWidth + 'px');
+        });
       }
     }; // end function init ()
 
@@ -103,31 +120,30 @@ export default {
           };
         }
       });
-
       // カウントダウン
-      var countDown = 2;
-      // var countDown = 5;
+      // var countDown = 2;
+      var countDown = 5;
       countFunc();
       var downTimer = setInterval(countFunc, 1000);
       function countFunc() {
         countDown--;
         $('#count-button').hide();
         $('#count-start__text').hide();
-        // if(countDown == 4){
-        //   $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
-        // }
-        // if(countDown == 3){
-        //   $('.count03').remove();
-        //   $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
-        // }
-        // if(countDown == 2){
-        //   $('.count02').remove();
-        //   $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
-        // }
-        // if(countDown == 1){
-        //   $('.count01').remove();
-        //   $(start).append('<p class="count-go">GO!!</p>');
-        // }
+        if(countDown == 4){
+          $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
+        }
+        if(countDown == 3){
+          $('.count03').remove();
+          $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
+        }
+        if(countDown == 2){
+          $('.count02').remove();
+          $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
+        }
+        if(countDown == 1){
+          $('.count01').remove();
+          $(start).append('<p class="count-go">GO!!</p>');
+        }
         if(countDown == 0){
           clearInterval(downTimer);
           $('.count-go').remove();
@@ -136,7 +152,8 @@ export default {
           timer = setInterval(timerFunc, 10);
         }
       };
-    });
+
+    }); // $('#count-button').on('click', function()
 
     function timerFunc() {
       time ++;
@@ -172,11 +189,20 @@ export default {
   }
 }
 
+.count-page-headding{
+    padding-left: 10px;
+    padding-right: 10px;
+    @media screen and(min-width: 670px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
+
 .count-game{
   position: relative;
 }
 
-#count-numbers{
+.count-numbers{
   display: flex;
   flex-wrap: wrap;
   // justify-content: space-between;
@@ -185,8 +211,7 @@ export default {
 
 .count-numbers__card{
   flex: 0 0 calc(20% - 1px);
-  height: 129px;
-  line-height: 129px;
+  // line-height: 130px;
   font-size: 1.8rem;
   font-weight: bold;
   background: $color-bg-brown;
@@ -197,11 +222,6 @@ export default {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
-  // &::after{
-  //   content:"";
-  //   display: block;
-  //   padding-top: 100%;
-  // }
 }
 
 .hit{
@@ -210,12 +230,6 @@ export default {
 }
 
 .count-numbers__card-inner{
-  // position: absolute;
-  // top: 50%;
-  // width: 100%;
-  // height: 100%;
-  // transform: translateY(50%);
-  // padding-top: calc(50% - 18px);
   cursor: pointer;
 }
 
@@ -232,33 +246,14 @@ export default {
   // background: $palette-red;
 }
 
-// .count-numbers__card{
-//   width: 99px;
-//   height: 64px;
-//   padding-top: 35px;
-//   font-size: 1.8rem;
-//   font-weight: bold;
-//   background: $color-bg-brown;
-//   color: $color-font-yellow;
-//   margin-right: 1px;
-//   margin-bottom: 1px;
-//   text-align: center;
-//   float: left;
-//   cursor: pointer;
-//   transition: 0.1s;
-//   &.hit{
-//     background: $color-bg-orange;
-//     color: $color-font-yellow;
-//   }
-// }
 .count-start{
   // opacity: 0;
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 650px;
-  height: 650px;
+  left: 0;
+  // transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
   background: $color-bg-brown;
   display: flex;
   flex-direction: column;
@@ -272,6 +267,16 @@ export default {
     opacity: 1;
     animation: anime-fade-in 3s;
   }
+  // &::after{
+  //   content:'';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: #000;
+  //   z-index: -1;
+  // }
 }
   @keyframes anime-fade-in {
     0% {
