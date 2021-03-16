@@ -73,12 +73,17 @@ export default {
 
     $('#count-button').on('click', function() {
       init();
-      $('.count-numbers__card-inner').on('click', function() {
+      $('.count-numbers__card').on('click', function() {
+        $(this).html('11111111');
+      // $('.count-numbers__card-inner').on('click', function() {
         var num = $(this).html();
         if (num == countNum){
           countNum ++;
+          // $(this).addClass('hit');
           $(this).addClass('hit');
-          $(this).parent().prepend('<div class="count-numbers__card-inner--02">HIT</div>');
+          $(this)
+          .parent()
+          .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>');
           // ↑飛んでいくカードを追加、アニメーションの指定
           $('.count-numbers__card-inner--02')
           .animate({}, function(){
@@ -106,28 +111,28 @@ export default {
       });
       // カウントダウン
       // var countDown = 2;
-      var countDown = 5;
+      var countDown = 2;
       countFunc();
       var downTimer = setInterval(countFunc, 1000);
       function countFunc() {
         countDown--;
         $('#count-button').hide();
         $('#count-start__text').hide();
-        if(countDown == 4){
-          $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
-        }
-        if(countDown == 3){
-          $('.count03').remove();
-          $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
-        }
-        if(countDown == 2){
-          $('.count02').remove();
-          $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
-        }
-        if(countDown == 1){
-          $('.count01').remove();
-          $(start).append('<p class="count-go">GO!!</p>');
-        }
+        // if(countDown == 4){
+        //   $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
+        // }
+        // if(countDown == 3){
+        //   $('.count03').remove();
+        //   $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
+        // }
+        // if(countDown == 2){
+        //   $('.count02').remove();
+        //   $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
+        // }
+        // if(countDown == 1){
+        //   $('.count01').remove();
+        //   $(start).append('<p class="count-go">GO!!</p>');
+        // }
         if(countDown == 0){
           clearInterval(downTimer);
           $('.count-go').remove();
@@ -202,7 +207,7 @@ export default {
   color: $color-font-yellow;
   margin-right: 1px;
   margin-bottom: 1px;
-  text-align: center;
+  // text-align: center;
   cursor: pointer;
   transition: 0.5s;
   position: relative;
@@ -222,17 +227,10 @@ export default {
 }
 
 .count-numbers__card-inner{
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  // z-index: 99;
-  // &::after{
-  //   content:"";
-  //   display: block;
-  //   padding-top: 100%;
-  // }
+  pointer-events: none;
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
 }
 
 .count-numbers__card-inner--02{
@@ -246,6 +244,9 @@ export default {
   // カードの回転時間
   transition: 0.5s;
   // background: $palette-red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .count-start{
@@ -343,8 +344,8 @@ export default {
       opacity: 1;
     }
     100% {
-        transform: scale(0.8, 0.8);
-        opacity: 1;
+      transform: scale(0.8, 0.8);
+      opacity: 1;
     }
   }
 
