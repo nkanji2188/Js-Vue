@@ -11,7 +11,7 @@
         <div class="section__head">
           <h2 class="count-page-headding df jcsb">
             <span class="page-headding__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
-            <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
+            <!-- <span class="page-headding__text">Time : <span id="count-timer">0</span></span> -->
           </h2>
         </div>
 
@@ -35,15 +35,6 @@
 export default {
   mounted: function() {
 
-  // var imgWidth = $('.count-numbers').width();
-
-  //   height();
-  //   var imgWidth = $('.button').width();
-  //   function height(){
-  //     $('.count-numbers__card').css('line-height', imgWidth)
-  //   };
-// console.log($(imgWidth).width());
-// console.log(imgHeight)
 // console.log($('#count-button').width())
     var countNum;
     var cardArray;
@@ -60,7 +51,7 @@ export default {
       cardArray = [];
       time = 0;
       // rendom = Math.ceil(Math.random()*10 + 5);
-      rendom = 2;
+      rendom = 5;
 
       for(var i = 0; i <= 24; i ++) {
         cardArray.push(i);
@@ -77,13 +68,6 @@ export default {
       for(var i = 0; i <= 24; i++) {
         var cardNum = cardArray[i] + 1;
         $('#count-numbers').prepend(`<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`);
-        // カードの縦横比を指定
-        var cardWidth = $('.count-numbers__card').width();
-        $('.count-numbers__card').css('line-height', cardWidth + 'px');
-        window.addEventListener('resize', function(){
-          var cardWidth = $('.count-numbers__card').width();
-          $('.count-numbers__card').css('line-height', cardWidth + 'px');
-        });
       }
     }; // end function init ()
 
@@ -222,6 +206,14 @@ export default {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::after{
+    content:"";
+    display: block;
+    padding-top: 100%;
+  }
 }
 
 .hit{
@@ -231,6 +223,16 @@ export default {
 
 .count-numbers__card-inner{
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  // z-index: 99;
+  // &::after{
+  //   content:"";
+  //   display: block;
+  //   padding-top: 100%;
+  // }
 }
 
 .count-numbers__card-inner--02{
