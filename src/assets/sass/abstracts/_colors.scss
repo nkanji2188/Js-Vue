@@ -1,4 +1,3 @@
-// variables
 $palette-gray: #2c3e50;
 $palette-yellow: #fec617;
 $palette-orange: #e27c1c;
@@ -14,6 +13,9 @@ $color-font-orange: $palette-orange;
 $color-font-brown: $palette-brown;
 $color-font-red: $palette-red;
 
+.font-color-yellow {
+  color: $color-font-yellow !important;
+}
 .bg-color-brown {
   background: $palette-brown !important;
 }
