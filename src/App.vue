@@ -2,12 +2,15 @@
   <div id="app">
     <div class="wrapper">
       <GlobalNav/>
-      <!-- <Header/> -->
+
+      <Header></Header>
+      <!-- <Header :username='name'></Header> -->
       <!-- <main class="main">
       </main> -->
       <router-view/>
-      <footer class="footer">
-        <p class="text-a-c"></p>
+      <!-- <Footer :username='title'></Footer> -->
+      <footer class="text-a-c pts pbs">
+        <small>©kanji nakahashi 2021</small>
       </footer>
     </div>
   </div>
@@ -18,19 +21,22 @@
 
 <script>
 import GlobalNav from './components/GlobalNav.vue'
-// import Header from './components/Header.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    GlobalNav
-    // Header
-  },
-  data () {
-    return {
-      msg: '@@@@'
-    }
+    GlobalNav,
+    Header
   }
+  // props: {
+  //   username: String
+  // }
+  // data () {
+  //   return {
+  //     name: 'honeタイトル'
+  //   }
+  // }
 }
 </script>
 
@@ -42,16 +48,4 @@ export default {
   opacity: 0;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

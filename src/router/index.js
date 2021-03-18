@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    username: 'ho-mu'
   },
   {
     path: '/about',
@@ -53,3 +54,7 @@ const router = new VueRouter({
 })
 
 export default router
+
+// router.afterEach((to, from) => {
+//   console.log('')
+// })

@@ -10,8 +10,9 @@
 
     <main class="main">
       <section class="section count-up-container">
-        <div class="section__head">
+        <div class="section__head mb0">
           <h2 class="df jcsb">
+            <div id="ttl"></div>
             <span class="page-headding__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
             <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
           </h2>
@@ -34,6 +35,7 @@
 <script>
 export default {
   mounted: function() {
+    // document.getElementById('header__title').textContent = 'l22222';
 
     var start = '#count-start',
         countNum,
@@ -168,7 +170,7 @@ export default {
 
 .CountUp-vue  {
   overflow: hidden;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 .count-up-container {

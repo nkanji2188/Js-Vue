@@ -1,6 +1,8 @@
 .section{
-	padding-top: 20px;
-	// height: 100vh;
+	padding-top: 10px;
+	@include mqtb {
+		padding-top: 20px;
+	}
 	&__head{
 		margin-bottom: 20px;
 	}

@@ -1,11 +1,13 @@
 .header {
-    padding-top: 25px;
-    padding-bottom: 10px;
-    background: $color-bg-yellow;
+    padding-top: 30px;
+    // background: $color-bg-yellow;
+    background: rgb(184, 184, 184);
     &__title {
       font-size: 5rem;
       color: $color-font-brown;
       @include mqtb{
+        padding-top: 50px;
+        padding-bottom: 10px;
         font-size: 6rem;
       }
     }

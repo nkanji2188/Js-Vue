@@ -18,14 +18,14 @@
       </section>
     </main>
 
+<p>{{ msg }}</p>
   </div>
-<!-- <p>{{ msg }}</p> -->
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header.vue'
+// document.getElementById('header__title').textContent = 'l22222'
 export default {
   name: 'Home',
   components: {
@@ -33,7 +33,7 @@ export default {
   },
   data () {
     return {
-      msg: 'ooooooooo'
+      name: 'honeタイトル'
     }
   }
 }

@@ -65,7 +65,7 @@ export default {
     $('#global-nav-sp__btn').on('click', function(){
       $('#global-nav-sp').toggleClass('global-nav-sp--02')
       $('#global-nav-sp__btn').toggleClass('global-nav-sp__btn--02')
-      if( $(this).html() == 'Menu'){
+      if( $(this).html() === 'Menu'){
         $(this).html('Close');
       }else{
         $(this).html('Menu');

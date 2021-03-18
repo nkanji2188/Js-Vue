@@ -10,6 +10,14 @@ require('./assets/sass/common.scss')
 
 Vue.config.productionTip = false
 
+const globalMixIn = {
+  props: {
+    username: String
+  }
+}
+
+Vue.mixin(globalMixIn)
+
 new Vue({
   router,
   store,
