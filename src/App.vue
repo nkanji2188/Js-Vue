@@ -1,14 +1,11 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <GlobalNav/>
-
-      <Header></Header>
-      <!-- <Header :username='name'></Header> -->
+      <!-- <GlobalNav/> -->
+      <Header/>
       <!-- <main class="main">
       </main> -->
       <router-view/>
-      <!-- <Footer :username='title'></Footer> -->
       <footer class="text-a-c pts pbs">
         <small>©kanji nakahashi 2021</small>
       </footer>
@@ -20,23 +17,15 @@
 </template>
 
 <script>
-import GlobalNav from './components/GlobalNav.vue'
+// import GlobalNav from './components/GlobalNav.vue'
 import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    GlobalNav,
+    // GlobalNav,
     Header
   }
-  // props: {
-  //   username: String
-  // }
-  // data () {
-  //   return {
-  //     name: 'honeタイトル'
-  //   }
-  // }
 }
 </script>
 

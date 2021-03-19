@@ -33,6 +33,7 @@ export default {
   },
   data () {
     return {
+      data1: 'data1',
       name: 'honeタイトル'
     }
   }
