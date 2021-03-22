@@ -1,33 +1,31 @@
 <script></script>
 <template>
-  <div class="CountUp-vue">
+  <div class="count-up-vue">
 
-    <header class="header">
-      <div class="header__inner">
-        <h1 class="header__title">Count Up</h1>
+    <h2 class="page-heading">
+      <span class="page-heading__text">
+        <span class="font-color-orange">C</span>ount
+        <span class="font-color-orange">U</span>p
+      </span>
+    </h2>
+
+    <section class="section container-small">
+      <div class="section__head mb0">
+        <h2 class="df jcsb">
+          <span class="primary-heading__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
+          <span class="primary-heading__text">Time : <span id="count-timer">0</span></span>
+        </h2>
       </div>
-    </header>
-
-    <main class="main">
-      <section class="section count-up-container">
-        <div class="section__head mb0">
-          <h2 class="df jcsb">
-            <div id="ttl"></div>
-            <span class="page-headding__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
-            <span class="page-headding__text">Time : <span id="count-timer">0</span></span>
-          </h2>
-        </div>
-        <div class="section__body">
-          <div id="count-game" class="count-game">
-            <div id="count-numbers" class="count-numbers"></div>
-            <div id="count-start" class="count-start">
-              <p id="count-start__text" class="font-color-yellow"></p>
-              <button id="count-button" class="button count">START</button>
-            </div>
+      <div class="section__body">
+        <div id="count-game" class="count-game">
+          <div id="count-numbers" class="count-numbers"></div>
+          <div id="count-start" class="count-start">
+            <p id="count-start__text" class="font-color-yellow"></p>
+            <button id="count-button" class="button count">START</button>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
   </div>
 </template>
@@ -35,7 +33,6 @@
 <script>
 export default {
   mounted: function() {
-    // document.getElementById('header__title').textContent = 'l22222';
 
     var start = '#count-start',
         countNum,
@@ -168,17 +165,10 @@ export default {
 
 <style lang="scss">
 
-.CountUp-vue  {
+.count-up-vue  {
   overflow: hidden;
+  height: 200vh;
   // min-height: 100vh;
-}
-
-.count-up-container {
-  max-width: 650px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .count-game{

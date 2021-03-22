@@ -1,22 +1,37 @@
 <template>
-  <div id="app">
-    <ul class="">
-      <li class="" v-for="todoList in todoLists" :key="todoList.title">
-        <input type="checkbox" v-model="todoList.checkToggle">
-        <label v-bind:class={doneTask:todoList.checkToggle}>
-          {{ todoList.title }}
-        </label>
-      </li>
-    </ul>
-    <hr>
-    <input type="text" v-model="newTitle" v-on:change="checkEntered()" placeholder="新しいタスクを追加する">
-    <button class="" v-on:click="addToDoList()" v-bind:class={noclick:!newTitleToggle}>
-      タスクを追加
-    </button>
-    <br>
-    <button class="" v-on:click="deleteToDoList()">
-      タスクを削除
-    </button>
+  <div id="todo">
+    <h2 class="page-heading">
+      <span class="page-heading__text">
+        <span class="font-color-orange">T</span>o
+        <span class="font-color-orange">D</span>o
+        <span class="font-color-orange">L</span>ist
+      </span>
+    </h2>
+    <section class="section container-small">
+      <div class="section__head">
+      </div>
+      <div class="section__body">
+        <ul class="">
+          <li class="" v-for="todoList in todoLists" :key="todoList.title">
+            <input type="checkbox" v-model="todoList.checkToggle">
+            <label v-bind:class={doneTask:todoList.checkToggle}>
+              {{ todoList.title }}
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="section__foot">
+        <input type="text" v-model="newTitle" v-on:change="checkEntered()" placeholder="新しいタスクを追加する">
+        <button class="button" v-on:click="addToDoList()" v-bind:class={noclick:!newTitleToggle}>
+          タスクを追加
+        </button>
+        <br>
+        <button class="button" v-on:click="deleteToDoList()">
+          タスクを削除
+        </button>
+      </div>
+    </section>
+
   </div>
 </template>
 

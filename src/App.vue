@@ -1,13 +1,12 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <!-- <GlobalNav/> -->
       <Header/>
-      <!-- <main class="main">
-      </main> -->
+      <main class="main">
       <router-view/>
+      </main>
       <footer class="text-a-c pts pbs">
-        <small>©kanji nakahashi 2021</small>
+        <small>&copy;kanji nakahashi 2021</small>
       </footer>
     </div>
   </div>
@@ -17,7 +16,6 @@
 </template>
 
 <script>
-// import GlobalNav from './components/GlobalNav.vue'
 import Header from './components/Header.vue'
 
 export default {

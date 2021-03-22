@@ -13,8 +13,14 @@ $color-font-orange: $palette-orange;
 $color-font-brown: $palette-brown;
 $color-font-red: $palette-red;
 
+.font-color-orange {
+  color: $color-font-orange !important;
+}
 .font-color-yellow {
   color: $color-font-yellow !important;
+}
+.bg-color-white {
+  background: #fff !important;
 }
 .bg-color-brown {
   background: $palette-brown !important;

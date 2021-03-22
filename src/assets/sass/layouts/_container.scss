@@ -13,7 +13,15 @@
   }
 }
 
-.container-small{
+.container-small {
+	max-width: 650px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.container-02{
 	padding-left: 15px;
 	padding-right: 15px;
 	@media screen and(min-width: 576px) {

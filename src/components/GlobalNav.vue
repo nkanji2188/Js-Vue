@@ -2,7 +2,6 @@
 <template>
   <div class="GlobalNav-vue">
 
-    <!-- sp -->
     <nav id="global-nav-sp" class="global-nav-sp">
       <ul class="global-nav-sp__inner">
         <li class="pb10">
@@ -30,7 +29,6 @@
     </nav>
     <button id="global-nav-sp__btn" class="global-nav-sp__btn">Menu</button>
 
-    <!-- pc -->
     <nav id="global-nav" class="global-nav">
       <ul class="global-nav__inner">
         <li class="global-nav__item">
@@ -82,76 +80,76 @@ export default {
 
 <style lang="scss">
 
-.global-nav-sp {
-  position: fixed;
-  top: 0;
-  right: -150px;
-  width: 150px;
-  height: 100vh;
-  padding-top: 50px;
-  padding-left: 20px;
-  z-index: 3;
-  background: $color-bg-orange;
-  transition: 0.5s;
-  &--02{
-    right: 0;
-  }
-  @include mqtb{
-    display: none;
-  }
-}
-  .global-nav-sp__link {
-    font-weight: bold;
-    color: $color-font-yellow;
-  }
-  .global-nav-sp__btn{
-    position: fixed;
-    top: 0;
-    right: -88px;
-    width: 150px;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-    color: $color-font-yellow;
-    background: $color-bg-brown;
-    z-index: 4;
-    transition: 0.5s;
-    &--02{
-      right: 0;
-      padding-left: 20px;
-    }
-    @include mqtb{
-      display: none;
-    }
-  }
+// .global-nav-sp {
+//   position: fixed;
+//   top: 0;
+//   right: -150px;
+//   width: 150px;
+//   height: 100vh;
+//   padding-top: 50px;
+//   padding-left: 20px;
+//   z-index: 3;
+//   background: $color-bg-orange;
+//   transition: 0.5s;
+//   &--02{
+//     right: 0;
+//   }
+//   @include mqtb{
+//     display: none;
+//   }
+// }
+//   .global-nav-sp__link {
+//     font-weight: bold;
+//     color: $color-font-yellow;
+//   }
+//   .global-nav-sp__btn{
+//     position: fixed;
+//     top: 0;
+//     right: -88px;
+//     width: 150px;
+//     padding: 10px;
+//     text-align: left;
+//     font-weight: bold;
+//     color: $color-font-yellow;
+//     background: $color-bg-brown;
+//     z-index: 4;
+//     transition: 0.5s;
+//     &--02{
+//       right: 0;
+//       padding-left: 20px;
+//     }
+//     @include mqtb{
+//       display: none;
+//     }
+//   }
 
-.global-nav {
-  @include mqsp {
-    display: none;
-  }
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  z-index: 3;
-}
-  .global-nav__inner {
-      display: flex;
-  }
-  .global-nav__item {
-    & + & {
-    border-left: 1px solid $color-font-brown;
-    padding-left: 10px;
-    margin-left: 10px;
-    }
-  }
-  .global-nav__link {
-      font-weight: bold;
-      color: $color-font-brown;
-  }
+// .global-nav {
+//   @include mqsp {
+//     display: none;
+//   }
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 20px;
+//   margin-top: 10px;
+//   display: flex;
+//   justify-content: center;
+//   z-index: 3;
+// }
+//   .global-nav__inner {
+//       display: flex;
+//   }
+//   .global-nav__item {
+//     & + & {
+//     border-left: 1px solid $color-font-brown;
+//     padding-left: 10px;
+//     margin-left: 10px;
+//     }
+//   }
+//   .global-nav__link {
+//       font-weight: bold;
+//       color: $color-font-brown;
+//   }
 
 </style>
