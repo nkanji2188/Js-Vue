@@ -94,10 +94,11 @@ export default {
   right: 0;
   z-index: 5;
   display: flex;
-  background: rgb(0, 158, 164);
+  // background: #748CAB;
   @include mqtb {
   top: 10px;
   width: 100%;
+  // padding: 20px;
   justify-content: center;
   }
 }
@@ -108,7 +109,8 @@ export default {
 }
   .header__title {
     color: $palette-orange;
-    text-shadow: 1px 1px 2px $palette-yellow;
+    color: #fff;
+    // text-shadow: 1px 1px 2px $palette-yellow;
     @include mqsp{
     position: fixed;
     top: 10px;
@@ -182,7 +184,8 @@ export default {
     padding: 10px;
     font-weight: bold;
     color: $color-font-brown;
-    text-shadow: 1px 1px 2px $palette-yellow;
+    color: #fff;
+    // text-shadow: 1px 1px 2px $palette-yellow;
   }
 
 </style>

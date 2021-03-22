@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <div class="main-bg">JavaScript<br>and<br>Vue.js</div>
+      <div class="main-bg">
+        JavaScript<br>and<br>Vue.js
+      </div>
       <Header/>
       <main class="main">
       <router-view/>
@@ -40,8 +42,12 @@ export default {
   font-size: 25rem;
   font-weight: bold;
   // text-shadow: #fff 0 0 10px;
+  color: #8092a1;
   background: rgb(255, 243, 106);
-  color: rgb(252, 237, 77);
+
+  background: #758ca0;
+  // background: #1D2D44;
+  // background: #1D2D44;
   // color: rgb(255, 243, 106);
   // background: rgb(252, 237, 77);
   z-index: -1;

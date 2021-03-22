@@ -1,18 +1,31 @@
 .page-heading{
-  margin-top: 50px;
+  // margin-top: 50px;
   text-align: center;
+  // background: #3E5C76;
   @include mqtb{
-    margin-top: 60px;
-    margin-bottom: 10px;
+    // margin-top: 60px;
+    // margin-bottom: 10px;
+    padding-top: 60px;
+    padding-bottom: 30px;
   }
+}
+.primary-heading__icon{
+  display: block;
+  width: 72px;
+  text-align: center;
+  font-size: 50px;
+  color: #1D2D44;;
+  background: #fff;
+  border-radius: 50%;
+
 }
 .page-heading__text{
   font-size: 4rem;
   line-height: 1.3;
   color: $color-font-brown;
-  color: rgb(46, 46, 46);
+  color: rgb(255, 255, 255);
   letter-spacing: 1.2rem;
-  font-weight: normal;
+  // font-weight: normal;
   @include mqtb{
     font-size: 5rem;
   }

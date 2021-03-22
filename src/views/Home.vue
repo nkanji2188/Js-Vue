@@ -10,6 +10,7 @@
     <section class="section container narrow mtm">
       <div class="section__head">
         <h2 class="primary-heading">
+          <span class="primary-heading__icon">S</span>
           <span class="primary-heading__text line">Site Consept</span>
         </h2>
       </div>
