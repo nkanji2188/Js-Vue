@@ -1,41 +1,58 @@
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('~@/assets/fonts/NotoSansJP-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('~@/assets/fonts/NotoSansJP-Black.otf') format('opentype');
+  font-weight: bold;
+}
+
 html {
   // ルートのフォントサイズ10px
   font-size: 62.5%;
 }
 
 body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // min-height: 100vh;
   // color: #2c3e50;
   color: $color-font-brown;
+  // color: #fff;
+  // background: url(../images/main-black2.jpg);
   // background: $color-bg-yellow;
   // ルートのフォントサイズ10px,1.4remで14px
   font-size: 1.4rem;
   line-height: 1.5;
   position: relative;
-  &::before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $color-bg-yellow;
-    mix-blend-mode: multiply;
-    z-index: -1;
-  }
+  // &::before{
+  //   content: 'JavaScript<br>&amp;Vue.js';
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 50%;
+  //   height: 100%;
+  //   font-size: 500px;
+  //   color: rgb(255, 245, 130);
+  //   background: rgb(34, 31, 2);
+  //   background: $color-bg-yellow;
+  //   mix-blend-mode: multiply;
+  //   z-index: -1;
+  // }
   // &::after{
   //   content: '';
   //   display: block;
   //   position: absolute;
   //   top: 0;
-  //   left: 0;
+  //   right: 0;
   //   width: 100%;
   //   height: 100%;
-  //   background: $color-bg-yellow;
+  //   background: rgb(252, 237, 77);
+  //   background: rgb(252, 237, 77);
   //   background: url(../images/main-bg16.jpg);
   //   opacity: 1;
   //   z-index: -2;

@@ -8,9 +8,9 @@
 }
 .page-heading__text{
   font-size: 4rem;
-  font-weight: bold;
   line-height: 1.3;
   color: $color-font-brown;
+  letter-spacing: 1.2rem;
   @include mqtb{
     font-size: 5rem;
   }
@@ -21,7 +21,7 @@
 .primary-heading__text{
   display: block;
   font-size: 3rem;
-  font-weight: bold;
+  // letter-spacing: 1.3rem;
   &.line {
     border-bottom: 1px solid $color-font-brown;
   }
