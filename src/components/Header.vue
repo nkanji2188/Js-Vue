@@ -94,6 +94,7 @@ export default {
   right: 0;
   z-index: 5;
   display: flex;
+  background: rgb(0, 158, 164);
   @include mqtb {
   top: 10px;
   width: 100%;
