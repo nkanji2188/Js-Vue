@@ -55,6 +55,25 @@ $color-font-red: $palette-red;
   background: $palette-red !important;
 }
 
+@mixin color-anime-title {
+  animation: color-anime-title 10s infinite;
+}
+  @keyframes color-anime-title {
+    0% {
+      // color: $color-sub;
+      color: rgb(227, 241, 255);
+      color: $color-sub;
+      
+    }
+    50% {
+      color: #8ea4b8;
+    }
+    100% {
+      // color: $color-sub;
+      color: rgb(227, 241, 255);
+      color: $color-sub;
+    }
+  }
 @mixin color-anime {
   animation: color-anime 10s infinite;
 }

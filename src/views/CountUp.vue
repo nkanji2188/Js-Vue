@@ -35,12 +35,12 @@ export default {
   mounted: function() {
 
     var start = '#count-start',
-        countNum,
-        cardArray,
-        playTime,
-        playTimer,
-        // カードを当てる回数25枚のときは26
-        rendom;
+      countNum,
+      cardArray,
+      playTime,
+      playTimer,
+      // カードを当てる回数25枚のときは26
+      rendom;
     init();
 
     // 初期化

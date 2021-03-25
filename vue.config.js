@@ -14,8 +14,8 @@ module.exports = {
     }
   },
   // エラーを一旦無効化
-  chainWebpack: config => {
-    config.module.rules.delete('eslint');
-  }
+  // chainWebpack: config => {
+  //   config.module.rules.delete('eslint');
+  // }
 }
 
