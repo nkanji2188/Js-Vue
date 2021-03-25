@@ -1,10 +1,9 @@
 <script></script>
 <template>
-  <div class="Header-vue">
+  <div class="header-vue">
 
     <header class="header">
-        <!-- <img class="header__logo" alt="Vue logo" src="../assets/images/logo.png"> -->
-        <h1 class="header__title">&#x25CF;Js<span>&amp;</span>Vue&#x25CF;</h1>
+      <h1 class="header__title"><span>[</span>Js&amp;Vue<span>]</span></h1>
     </header>
 
     <!-- global-nav-sp -->
@@ -88,38 +87,48 @@ export default {
 
 <style lang="scss">
 
-.Header-vue{
+.header-vue{
   position: fixed;
   top: 0;
   right: 0;
   z-index: 5;
   display: flex;
-  // background: #748CAB;
   @include mqtb {
-  top: 10px;
+    // top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 100%;
-  // padding: 20px;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
   }
 }
 
 .header{
-  margin-top: 10px;
+  // padding-top: 10px;
   margin-right: 20px;
+  @include mqtb {
+  }
 }
   .header__title {
-    color: $palette-orange;
-    color: #fff;
+    padding-top: 10px;
+    color: $color-main;
     // text-shadow: 1px 1px 2px $palette-yellow;
     @include mqsp{
-    position: fixed;
-    top: 10px;
-    left: 0;
-    width: 100%;
-    text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      // padding-top: 20px;
+      padding-bottom: 9px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.5);
     }
     & > span {
-      font-size: 1.2rem;
+      margin-left: 5px;
+      margin-right: 5px;
+      color: $color-sub;
+      -webkit-text-stroke-color: $color-main;
+      -webkit-text-stroke-width: 0.5px;
     }
   }
 
@@ -131,7 +140,7 @@ export default {
   height: 100vh;
   padding-top: 50px;
   padding-left: 20px;
-  background: $color-bg-orange;
+  background: $color-sub;
   z-index: 3;
   transition: 0.5s;
   &--02{
@@ -145,7 +154,7 @@ export default {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: $color-font-yellow;
+    color: $color-main;
   }
   .global-nav-sp__btn{
     width: 150px;
@@ -153,8 +162,8 @@ export default {
     padding: 10px;
     text-align: left;
     font-weight: bold;
-    color: $color-font-yellow;
-    background: $color-bg-brown;
+    color: #fff;
+    background: $color-main;
     z-index: 4;
     transition: 0.5s;
     &--02{
@@ -177,14 +186,13 @@ export default {
   }
   .global-nav__item {
     & + & {
-    border-left: 1px solid $color-font-brown;
+    border-left: 1px solid $color-main;
     }
   }
   .global-nav__link {
     padding: 10px;
     font-weight: bold;
-    color: $color-font-brown;
-    color: #fff;
+    color: $color-main;
     // text-shadow: 1px 1px 2px $palette-yellow;
   }
 

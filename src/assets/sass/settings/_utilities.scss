@@ -20,11 +20,20 @@
   font-size: 2rem !important;
   font-weight: bold !important;
 }
+.letter-s-n{
+  letter-spacing: normal !important;
+}
 .df {
   display: flex !important;
 }
+.jcc {
+  justify-content: center !important;
+}
 .jcsb {
   justify-content: space-between !important;
+}
+.flex-d-c{
+  flex-direction: column !important;
 }
 .display-none {
   display: none !important;
@@ -40,6 +49,11 @@
 }
 .sp-none {
   @include mqsp {
+    display: none !important;
+  }
+}
+.pc-none {
+  @include mqpc {
     display: none !important;
   }
 }

@@ -2,20 +2,22 @@
   <div id="app">
     <div class="wrapper">
       <div class="main-bg">
-        JavaScript<br>and<br>Vue.js
+        Abeunt<br>studia in<br>mores.
+        <!-- JavaScript<br>and<br>Vue.js<br> -->
+        <span class="pc-none"><br>Amat victoria curam.</span>
       </div>
       <Header/>
       <main class="main">
-      <router-view/>
+        <transition mode="out-in">
+          <router-view/>
+        </transition>
       </main>
-      <footer class="text-a-c pts pbs">
+      <footer class="text-a-c pts pbs font-color-main">
         <small>&copy;kanji nakahashi 2021</small>
       </footer>
     </div>
   </div>
   <!-- <div>{{ msg }}</div> -->
-  <!-- <transition mode="out-in">
-  </transition> -->
 </template>
 
 <script>
@@ -25,38 +27,44 @@ export default {
   components: {
     // GlobalNav,
     Header
-  }
+  },
 }
+
 </script>
 
 <style lang="scss">
-.main-bg{
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 5%;
-  padding-left: 5%;
+.header__mv{
   width: 100%;
   height: 100vh;
-  line-height: 1;
-  font-size: 25rem;
-  font-weight: bold;
-  // text-shadow: #fff 0 0 10px;
-  color: #8092a1;
-  background: rgb(255, 243, 106);
-
-  background: #758ca0;
-  // background: #1D2D44;
-  // background: #1D2D44;
-  // color: rgb(255, 243, 106);
-  // background: rgb(252, 237, 77);
-  z-index: -1;
+  // background: rgb(223, 129, 129);
 }
-// .v-enter-active, .v-leave-active{
-//   transition: opacity 0.5s;
-// }
-// .v-enter, .v-leave-to {
-//   opacity: 0;
-// }
+.main-bg{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  line-height: 1.5;
+  font-size: 5rem;
+  font-weight: bold;
+  color: $color-sub;
+  z-index: -1;
+  @include color-anime;
+  @include mqtb {
+    line-height: 1;
+    font-size: 11vw;
+  }
+  @include mqpcl {
+    font-size: 12vw;
+  }
+}
+
+.v-enter-active, .v-leave-active{
+  transition: opacity 0.2s;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
 
 </style>

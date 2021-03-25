@@ -3,14 +3,14 @@
 
     <h2 class="page-heading">
       <span class="page-heading__text">
-        <span class="font-color-orange">J</span>ava<span class="font-color-orange">S</span>cript<br>&amp;<span class="font-color-orange">V</span>ue.js
+        <span>J</span>ava<span>S</span>cript<br>&amp;<span>V</span>ue.js
       </span>
     </h2>
 
     <section class="section container narrow mtm">
       <div class="section__head">
         <h2 class="primary-heading">
-          <span class="primary-heading__icon">S</span>
+          <!-- <span class="primary-heading__icon">S</span> -->
           <span class="primary-heading__text line">Site Consept</span>
         </h2>
       </div>
@@ -31,7 +31,7 @@
           <p class="text-box__text">またランダムに当たりを入れ、いつゲームクリアーになるか分からない仕掛けをいれています。</p>
         </div>
         <div class="button-box">
-          <a class="button" href="">Count Upへ</a>
+          <a class="button" href="">Count Up</a>
         </div>
         <h4 class="secondary-heading">
           <span class="secondary-heading__text">To Do List</span>
@@ -42,7 +42,7 @@
           <p class="text-box__text">またランダムに当たりを入れ、いつゲームクリアーになるか分からない仕掛けをいれています。</p>
         </div>
         <div class="button-box">
-          <a class="button" href="">Count Upへ</a>
+          <a class="button" href="">Count Up</a>
         </div>
 
       </div>

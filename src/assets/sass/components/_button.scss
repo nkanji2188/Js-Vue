@@ -1,19 +1,33 @@
 .button-box{
-	// text-align: rig	ht;
-
+	text-align: center;
+	@include mqtb {
+		text-align: right;
+	}
 }
 .button{
-	padding: 10px 20px;
-	margin: 0 0 0 auto;
-	color: $color-font-yellow;
-	background: $color-bg-orange;
+	display: block;
+	padding: 10px 0px;
+	color: $color-main;
 	font-size: 2rem;
 	font-weight: bold;
-	border-radius: 2.0rem;
-	// &.count{
-	// 	position: absolute;
-	// 	top: 50%;
-	// 	left: 50%;
-	// 	transform: translate(-50%, -50%);
-	// }
+	border-top: 1px solid $color-main;
+	border-bottom: 1px solid $color-main;
+	width: 100%;
+	@include mqtb {
+		display: inline;
+		width: auto;
+	}
+	&::before {
+		content:'{{';
+	}
+	&::after {
+		content:'}}';
+	}
+	& + & {
+	} 
+	&.count	{
+		color: rgb(255, 255, 255);
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+	}
 }

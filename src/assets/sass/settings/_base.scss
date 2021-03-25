@@ -1,3 +1,11 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
 @font-face {
   font-family: 'Noto Sans JP';
   src: url('~@/assets/fonts/NotoSansJP-Regular.otf') format('opentype');
@@ -8,66 +16,122 @@
   font-weight: bold;
 }
 
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, button,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, a,
+b, i, main,
+dl, dt, dd, ol, ul, li,input,textarea,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Arial, sans-serif;
+}
+
 html {
   // ルートのフォントサイズ10px
   font-size: 62.5%;
 }
 
 body {
-  font-family: 'Noto Sans JP', sans-serif;
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // min-height: 100vh;
-  // color: #2c3e50;
-  color: $color-font-brown;
-  color: rgb(46, 46, 46);
-  color: #fff;
-  // color: rgb(255, 255, 255);
-  // color: #fff;
-  // background: url(../images/main-black2.jpg);
-  // background: $color-bg-yellow;
+  color: #333;
   // ルートのフォントサイズ10px,1.4remで14px
   font-size: 1.4rem;
   line-height: 1.5;
   position: relative;
-  // &::before{
-  //   content: 'JavaScript<br>&amp;Vue.js';
-  //   display: block;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 50%;
-  //   height: 100%;
-  //   font-size: 500px;
-  //   color: rgb(255, 245, 130);
-  //   background: rgb(34, 31, 2);
-  //   background: $color-bg-yellow;
-  //   mix-blend-mode: multiply;
-  //   z-index: -1;
-  // }
-  // &::after{
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: rgb(252, 237, 77);
-  //   background: rgb(252, 237, 77);
-  //   background: url(../images/main-bg16.jpg);
-  //   opacity: 1;
-  //   z-index: -2;
-  // }
 }
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+
+ul{
+  list-style-type: none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
 a {
-	text-decoration: none;
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
   transition: 0.2s;
   &:hover {
     opacity: 0.6;
   }
 }
-ul{
-  list-style-type: none;
+
+/* change colours to suit your needs */
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color:#ff9;
+  color:#000;
+  font-style:italic;
+  font-weight:bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+input, select {
+  vertical-align:middle;
+}
+
+img{
+  display: block;
 }

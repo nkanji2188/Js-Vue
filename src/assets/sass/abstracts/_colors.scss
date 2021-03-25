@@ -1,34 +1,49 @@
+// .color-test{ 
+//   background: #F0EBD8;
+//   background: #748CAB;
+//   background: #3E5C76;
+//   background: #1D2D44;
+//   background: #0D1321;
+// }
 
-.o{ 
-  background: #F0EBD8;
-  background: #748CAB;
-  background: #3E5C76;
-  background: #1D2D44;
-  background: #0D1321;
-}
-
+$palette-blue: #758ca0;
+$palette-light-blue: #f0f8ff;
 $palette-gray: #2c3e50;
 $palette-yellow: #fec617;
-// $palette-orange: #e27c1c;
-$palette-orange: #ffffffac;
-// $palette-orange: #72bdff;
+$palette-orange: #e27c1c;
 $palette-brown: #7d5740;
 $palette-red: rgb(249, 21, 21);
+$color-main: $palette-blue;
+$color-sub: $palette-light-blue;
 $color-bg-yellow: $palette-yellow;
 $color-bg-orange: $palette-orange;
 $color-bg-brown: $palette-brown;
 $color-bg-red: $palette-red;
-$color-font-main: $palette-gray;
 $color-font-yellow: $palette-yellow;
 $color-font-orange: $palette-orange;
 $color-font-brown: $palette-brown;
 $color-font-red: $palette-red;
 
+.font-color-main {
+  color: $palette-blue !important;
+}
+.font-color-sub {
+  color: $palette-light-blue !important;
+}
 .font-color-orange {
   color: $color-font-orange !important;
 }
+.font-color-white {
+  color: #fff !important;
+}
 .font-color-yellow {
   color: $color-font-yellow !important;
+}
+.bg-color-main {
+  background: $palette-blue !important;
+}
+.bg-color-sub {
+  background: $palette-light-blue !important;
 }
 .bg-color-white {
   background: #fff !important;
@@ -39,3 +54,21 @@ $color-font-red: $palette-red;
 .bg-color-red {
   background: $palette-red !important;
 }
+
+@mixin color-anime {
+  animation: color-anime 10s infinite;
+}
+  @keyframes color-anime {
+    0% {
+      // color: $color-sub;
+      color: #fff;
+    }
+    50% {
+      color: rgb(227, 241, 255);
+      // color: rgb(231, 255, 245);
+    }
+    100% {
+      // color: $color-sub;
+      color: #fff;
+    }
+  }

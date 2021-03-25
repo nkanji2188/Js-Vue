@@ -4,23 +4,23 @@
 
     <h2 class="page-heading">
       <span class="page-heading__text">
-        <span class="font-color-orange">C</span>ount
-        <span class="font-color-orange">U</span>p
+        <span>C</span>ount
+        <span>U</span>p
       </span>
     </h2>
 
     <section class="section container-small">
       <div class="section__head mb0">
         <h2 class="df jcsb">
-          <span class="primary-heading__text">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
-          <span class="primary-heading__text">Time : <span id="count-timer">0</span></span>
+          <span class="primary-heading__text letter-s-n">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
+          <span class="primary-heading__text letter-s-n">Time : <span id="count-timer">0</span></span>
         </h2>
       </div>
       <div class="section__body">
         <div id="count-game" class="count-game">
           <div id="count-numbers" class="count-numbers"></div>
           <div id="count-start" class="count-start">
-            <p id="count-start__text" class="font-color-yellow"></p>
+            <p id="count-start__text" class="font-color-white"></p>
             <button id="count-button" class="button count">START</button>
           </div>
         </div>
@@ -186,8 +186,8 @@ export default {
     margin-bottom: 1px;
     font-size: 1.8rem;
     font-weight: bold;
-    color: $color-font-yellow;
-    background: $color-bg-brown;
+    color: #fff;
+    background: $color-main;
     transition: 0.5s;
     position: relative;
     display: flex;
@@ -227,7 +227,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: $color-bg-brown;
+  background: $color-main;
   display: flex;
   flex-direction: column;
   align-items: center;
