@@ -60,18 +60,12 @@ export default {
     // アニメーション文字を一度同時表示
     setTimeout(openFunc01, 5000);
     function openFunc01() {
-      $('[class^=opening-anime__text-child-]').animate({'opacity': 1}, 800, function() {
-        $(this).fadeOut(800, function() {
-          $(this).remove();
-        });
-      });
+      $('[class^=opening-anime__text-child-]').removeClass().addClass('opening-anime__text-child--02');
+      // $('[class^=opening-anime__text-child-]').animate({'opacity': 1}, 800, function() {
+      //   $(this).fadeOut(800)
+
     }
-    // アニメを削除
-    setTimeout(openFunc02, 7000);
-    function openFunc02() {
-      $('.opening-anime').remove();
-      // $('#opening-hide').fadeIn(500);
-    }
+
   }
 
 }
@@ -102,58 +96,75 @@ export default {
       font-size: 8rem;
     }
     & > span{
-      opacity: 0;
+      // opacity: 0;
     }
   }
   .opening-anime__text-child-01 {
+    opacity: 0;
     animation: kf-opening-anime 2s 1.5s;
   }
   .opening-anime__text-child-02 {
+    opacity: 0;
     animation: kf-opening-anime 2s 1.6s;
   }
   .opening-anime__text-child-03 {
+    opacity: 0;
     animation: kf-opening-anime 2s 1.7s;
   }
   .opening-anime__text-child-04 {
+    opacity: 0;
     animation: kf-opening-anime 2s 1.8s;
   }
   .opening-anime__text-child-05 {
+    opacity: 0;
     animation: kf-opening-anime 2s 1.9s;
   }
   .opening-anime__text-child-06 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2s;
   }
   .opening-anime__text-child-07 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.1s;
   }
   .opening-anime__text-child-08 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.2s;
   }
   .opening-anime__text-child-09 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.3s;
   }
   .opening-anime__text-child-10 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.4s;
   }
   .opening-anime__text-child-11 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.5s;
   }
   .opening-anime__text-child-12 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.6s;
   }
   .opening-anime__text-child-13 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.7s;
   }
   .opening-anime__text-child-14 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.8s;
   }
   .opening-anime__text-child-15 {
+    opacity: 0;
     animation: kf-opening-anime 2s 2.9s;
   }
   .opening-anime__text-child-16 {
+    opacity: 0;
     animation: kf-opening-anime 2s 3s;
   }
   .opening-anime__text-child-17 {
+    opacity: 0;
     animation: kf-opening-anime 2s 3.1s;
   }
     @keyframes kf-opening-anime {
@@ -178,6 +189,21 @@ export default {
         opacity: 0;
       }
     }
+  .opening-anime__text-child--02{
+    animation: kf-opening-hide02 1.6s 5s;
+    opacity: 0;
+  }
+  @keyframes kf-opening-hide02 {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+ }
 
 .opening-hide{
   animation: kf-opening-hide 0.5s 6.5s both;
