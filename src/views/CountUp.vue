@@ -83,24 +83,20 @@ export default {
           $(this)
             .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>');
           $('.count-numbers__card-inner--02').animate({}, function(){
-            $(this)
+            $('.count-numbers__card-inner--02')
               .css('transform', 'rotateX(720deg) rotateY(720deg)')
               .addClass('bg-color-red')
           })
-          var animeCount = 0;
+          // var animeCount = 0;
           // カードが飛び始めるまでの待機時間
-          var animeTimer = setInterval(animeFunc, 600);
+          setTimeout(animeFunc, 600);
           function animeFunc() {
-            animeCount++;
             $('.count-numbers__card-inner--02').animate({}, function() {
               $(this).css('transform', `translate( ${Math.floor( Math.random() * 10000) -5000}px, ${Math.floor( Math.random() * 10000) -5000}px)` );
               $(this).fadeOut( function() {
                 $(this).remove();
               });
             })
-            if (animeCount == 1) {
-              clearInterval(animeTimer);
-            }
           };
         }
       });
