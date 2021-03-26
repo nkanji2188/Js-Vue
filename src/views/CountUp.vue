@@ -82,26 +82,21 @@ export default {
           // 飛んでいくカードを追加、アニメーションの指定
           $(this)
             .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>');
-          // $('.count-numbers__card-inner--02').animate({}, function(){
-          //   $('.count-numbers__card-inner--02')
-          //     .css('transform', 'rotateX(720deg) rotateY(720deg)')
-          //     .addClass('bg-color-red')
-          // })
-
-          setTimeout(animeFunc01);
-          function animeFunc01() {
+          $('.count-numbers__card-inner--02')
+            .css({color: '#fec617', background: '#ff0000'});
+          // カードが回るまでの待機時間
+          setTimeout(cardFunc01, 100);
+          function cardFunc01() {
             $('.count-numbers__card-inner--02')
-              .addClass('bg-color-red').css('transform', 'rotateX(720deg) rotateY(720deg)');
+              .css('transform', 'rotateX(720deg) rotateY(720deg)');
           };
           // カードが飛び始めるまでの待機時間
-          setTimeout(animeFunc, 600);
-          function animeFunc() {
-            // $('.count-numbers__card-inner--02').animate({}, function() {
+          setTimeout(cardFunc02, 600);
+          function cardFunc02() {
             $('.count-numbers__card-inner--02').css('transform', `translate( ${Math.floor( Math.random() * 10000) -5000}px, ${Math.floor( Math.random() * 10000) -5000}px)` )
             .fadeOut( function() {
               $(this).remove();
             });
-            // })
           };
         }
       });

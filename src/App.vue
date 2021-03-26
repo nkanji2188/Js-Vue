@@ -26,7 +26,7 @@
         </span>
       </div>
 
-      <div id="opening-hide">
+      <div class="opening-hide">
         <div class="main-bg">
           Abeunt<br>studia in<br>mores.
           <span class="pc-none"><br>Amat victoria curam.</span>
@@ -56,7 +56,7 @@ export default {
   },
 
   mounted:function() {
-    $('#opening-hide').hide();
+    // $('#opening-hide').hide();
     // アニメーション文字を一度同時表示
     setTimeout(openFunc01, 5000);
     function openFunc01() {
@@ -66,10 +66,11 @@ export default {
         });
       });
     }
-    // 全画面をフェードイン
-    setTimeout(openFunc02, 6500);
+    // アニメを削除
+    setTimeout(openFunc02, 7000);
     function openFunc02() {
-      $('#opening-hide').fadeIn(500);
+      $('.opening-anime').remove();
+      // $('#opening-hide').fadeIn(500);
     }
   }
 
@@ -177,6 +178,18 @@ export default {
         opacity: 0;
       }
     }
+
+.opening-hide{
+  animation: kf-opening-hide 0.5s 6.5s both;
+}
+  @keyframes kf-opening-hide {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+ }
 
 .main-bg{
   position: fixed;
