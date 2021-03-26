@@ -5,35 +5,35 @@
 
       <div class="opening-anime">
         <span class="page-heading__text">
-          <!-- 読み込み時のanimeクラスを削除 -->
-          <span class="heading01 anime">J</span>
-          <span class="heading02 anime">a</span>
-          <span class="heading03 anime">v</span>
-          <span class="heading04 anime">a</span>
-          <span class="heading05 anime">S</span>
-          <span class="heading06 anime">c</span>
-          <span class="heading07 anime">r</span>
-          <span class="heading08 anime">i</span>
-          <span class="heading09 anime">p</span>
-          <span class="heading10 anime">t</span>
+          <span class="heading01">J</span>
+          <span class="heading02">a</span>
+          <span class="heading03">v</span>
+          <span class="heading04">a</span>
+          <span class="heading05">S</span>
+          <span class="heading06">c</span>
+          <span class="heading07">r</span>
+          <span class="heading08">i</span>
+          <span class="heading09">p</span>
+          <span class="heading10">t</span>
           <br>
-          <span class="heading11 anime">&amp;</span>
-          <span class="heading12 anime">V</span>
-          <span class="heading13 anime">u</span>
-          <span class="heading14 anime">e</span>
-          <span class="heading15 anime">.</span>
-          <span class="heading16 anime">j</span>
-          <span class="heading17 anime">s</span>
+          <span class="heading11">&amp;</span>
+          <span class="heading12">V</span>
+          <span class="heading13">u</span>
+          <span class="heading14">e</span>
+          <span class="heading15">.</span>
+          <span class="heading16">j</span>
+          <span class="heading17">s</span>
         </span>
       </div>
 
-      <div class="main-bg">
+      <div class="main-bg header-opening">
         Abeunt<br>studia in<br>mores.
         <!-- JavaScript<br>and<br>Vue.js<br> -->
         <span class="pc-none"><br>Amat victoria curam.</span>
       </div>
-      <Header/>
-      <main class="main">
+      <!-- <Header/> -->
+      <Header class="header-opening"></Header>
+      <main class="main header-opening">
         <transition mode="out-in">
           <router-view/>
         </transition>
@@ -58,6 +58,21 @@ export default {
   // mounted: window.onload = function() {
   // $('.page-heading__text > span').addClass('anime')
   // }
+  mounted:function() {
+    window.setTimeout(openFanc, 5000);
+    function openFanc() {
+      $('[class^=heading]').animate({'opacity': 1}, 1000, function() {
+        $(this).fadeOut(1000, function() {
+          $(this).remove();
+        });
+      });
+    }
+    window.setTimeout(openFanc02, 7000);
+    function openFanc02() {
+      $('.header-opening').addClass('header-opening--02');
+    }
+
+  }
 }
 
 </script>
@@ -100,6 +115,28 @@ export default {
     font-size: 12vw;
   }
 }
+
+.header-opening{
+  // transform: translateY( 50px);
+  opacity: 0;
+  // filter: blur(2px);
+  transition: 1s;
+  // animation: header-anime 2s 5s;
+}
+.header-opening--02{
+  transform: translateY( 0);
+  filter: blur(0);
+  opacity: 1;
+  // animation: header-anime 2s 5s;
+}
+//  @keyframes header-anime {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
 .v-enter-active, .v-leave-active{
   transition: opacity 0.2s;
