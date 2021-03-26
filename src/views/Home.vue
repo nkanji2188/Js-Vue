@@ -4,28 +4,9 @@
 
     <h2 class="page-heading">
       <span class="page-heading__text">
-        <!-- FVが終わったらスパンだけに変更 -->
-        <span class="top">J</span>ava<span class="top">S</span>cript<br>
-        &amp;<span class="top">V</span>ue.js
-
-        <!-- <span class="heading01 anime">J</span>
-        <span class="heading02 anime">a</span>
-        <span class="heading03 anime">v</span>
-        <span class="heading04 anime">a</span>
-        <span class="heading05 anime">S</span>
-        <span class="heading06 anime">c</span>
-        <span class="heading07 anime">r</span>
-        <span class="heading08 anime">i</span>
-        <span class="heading09 anime">p</span>
-        <span class="heading10 anime">t</span>
+        <span>J</span>ava<span>S</span>cript
         <br>
-        <span class="heading11 anime">&amp;</span>
-        <span class="heading12 anime">V</span>
-        <span class="heading13 anime">u</span>
-        <span class="heading14 anime">e</span>
-        <span class="heading15 anime">.</span>
-        <span class="heading16 anime">j</span>
-        <span class="heading17 anime">s</span> -->
+        &amp;<span>V</span>ue.js
       </span>
     </h2>
 
@@ -73,13 +54,11 @@
       </div>
     </section>
 
-<p>{{ msg }}</p>
+<!-- <p>{{ msg }}</p> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// document.getElementById('header__title').textContent = 'l22222'
 export default {
   name: 'Home',
   components: {
@@ -89,12 +68,6 @@ export default {
   //     data1: 'data1',
   //   }
   // },
-  // mounted:function() {
-  //   window.setTimeout( openFanc, 5000);
-  //   function openFanc(){
-  //     $('.opening').addClass('opening--02');
-  //   }
-  // }
 }
 </script>
 

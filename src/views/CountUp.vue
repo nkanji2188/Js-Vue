@@ -4,8 +4,7 @@
 
     <h2 class="page-heading">
       <span class="page-heading__text">
-        <span>C</span>ount
-        <span>U</span>p
+        <span>C</span>ount<span>U</span>p
       </span>
     </h2>
 

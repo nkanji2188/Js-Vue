@@ -4,100 +4,184 @@
     <div class="wrapper">
 
       <div class="opening-anime">
-        <span class="page-heading__text">
-          <span class="heading01">J</span>
-          <span class="heading02">a</span>
-          <span class="heading03">v</span>
-          <span class="heading04">a</span>
-          <span class="heading05">S</span>
-          <span class="heading06">c</span>
-          <span class="heading07">r</span>
-          <span class="heading08">i</span>
-          <span class="heading09">p</span>
-          <span class="heading10">t</span>
+        <span class="opening-anime__text">
+          <span class="opening-anime__text-child-01">J</span>
+          <span class="opening-anime__text-child-02">a</span>
+          <span class="opening-anime__text-child-03">v</span>
+          <span class="opening-anime__text-child-04">a</span>
+          <span class="opening-anime__text-child-05">S</span>
+          <span class="opening-anime__text-child-06">c</span>
+          <span class="opening-anime__text-child-07">r</span>
+          <span class="opening-anime__text-child-08">i</span>
+          <span class="opening-anime__text-child-09">p</span>
+          <span class="opening-anime__text-child-10">t</span>
           <br>
-          <span class="heading11">&amp;</span>
-          <span class="heading12">V</span>
-          <span class="heading13">u</span>
-          <span class="heading14">e</span>
-          <span class="heading15">.</span>
-          <span class="heading16">j</span>
-          <span class="heading17">s</span>
+          <span class="opening-anime__text-child-11">&amp;</span>
+          <span class="opening-anime__text-child-12">V</span>
+          <span class="opening-anime__text-child-13">u</span>
+          <span class="opening-anime__text-child-14">e</span>
+          <span class="opening-anime__text-child-15">.</span>
+          <span class="opening-anime__text-child-16">j</span>
+          <span class="opening-anime__text-child-17">s</span>
         </span>
       </div>
 
-      <div class="main-bg header-opening">
-        Abeunt<br>studia in<br>mores.
-        <!-- JavaScript<br>and<br>Vue.js<br> -->
-        <span class="pc-none"><br>Amat victoria curam.</span>
+      <div id="opening-hide">
+        <div class="main-bg">
+          Abeunt<br>studia in<br>mores.
+          <span class="pc-none"><br>Amat victoria curam.</span>
+        </div>
+        <Header/>
+        <main class="main">
+          <transition mode="out-in">
+            <router-view/>
+          </transition>
+        </main>
+        <footer class="text-a-c pts pbs font-color-main">
+          <small>&copy;kanji nakahashi 2021</small>
+        </footer>
       </div>
-      <!-- <Header/> -->
-      <Header class="header-opening"></Header>
-      <main class="main header-opening">
-        <transition mode="out-in">
-          <router-view/>
-        </transition>
-      </main>
-      <footer class="text-a-c pts pbs font-color-main">
-        <small>&copy;kanji nakahashi 2021</small>
-      </footer>
+
     </div>
   </div>
-  <!-- <div>{{ msg }}</div> -->
 </template>
 
 <script>
 import Header from './components/Header.vue'
+
 export default {
   name: 'App',
   components: {
-    // GlobalNav,
     Header
   },
-  // 初回読み込み時のみのアニメーション
-  // mounted: window.onload = function() {
-  // $('.page-heading__text > span').addClass('anime')
-  // }
+
   mounted:function() {
-    window.setTimeout(openFanc, 5000);
-    function openFanc() {
-      $('[class^=heading]').animate({'opacity': 1}, 1000, function() {
-        $(this).fadeOut(1000, function() {
+    $('#opening-hide').hide();
+    // アニメーション文字を一度同時表示
+    setTimeout(openFunc01, 5000);
+    function openFunc01() {
+      $('[class^=opening-anime__text-child-]').animate({'opacity': 1}, 800, function() {
+        $(this).fadeOut(800, function() {
           $(this).remove();
         });
       });
     }
-    window.setTimeout(openFanc02, 7000);
-    function openFanc02() {
-      $('.header-opening').addClass('header-opening--02');
+    // 全画面をフェードイン
+    setTimeout(openFunc02, 6500);
+    function openFunc02() {
+      $('#opening-hide').fadeIn(500);
     }
-
   }
-}
 
+}
 </script>
 
 <style lang="scss">
-.wrapper{
-  position: relative;
-}
 
 .opening-anime{
   position: fixed;
-  // position: absolute;
   top: 50%;
   width: 100%;
-  // height: 100vh;
-  transform: translateY(-50%);
   text-align: center;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  transform: translateY(-50%);
 }
+  .opening-anime__text{
+    font-size: 4rem;
+    line-height: 1.3;
+    font-weight: bold;
+    color: $color-sub;
+    -webkit-text-stroke-color: $color-main;
+    -webkit-text-stroke-width: 0.5px;
+    letter-spacing: nomal;
+    @include mqtb{
+      font-size: 5rem;
+      letter-spacing: 1.2rem;
+    }
+    @include mqpc{
+      font-size: 8rem;
+    }
+    & > span{
+      opacity: 0;
+    }
+  }
+  .opening-anime__text-child-01 {
+    animation: kf-opening-anime 2s 1.5s;
+  }
+  .opening-anime__text-child-02 {
+    animation: kf-opening-anime 2s 1.6s;
+  }
+  .opening-anime__text-child-03 {
+    animation: kf-opening-anime 2s 1.7s;
+  }
+  .opening-anime__text-child-04 {
+    animation: kf-opening-anime 2s 1.8s;
+  }
+  .opening-anime__text-child-05 {
+    animation: kf-opening-anime 2s 1.9s;
+  }
+  .opening-anime__text-child-06 {
+    animation: kf-opening-anime 2s 2s;
+  }
+  .opening-anime__text-child-07 {
+    animation: kf-opening-anime 2s 2.1s;
+  }
+  .opening-anime__text-child-08 {
+    animation: kf-opening-anime 2s 2.2s;
+  }
+  .opening-anime__text-child-09 {
+    animation: kf-opening-anime 2s 2.3s;
+  }
+  .opening-anime__text-child-10 {
+    animation: kf-opening-anime 2s 2.4s;
+  }
+  .opening-anime__text-child-11 {
+    animation: kf-opening-anime 2s 2.5s;
+  }
+  .opening-anime__text-child-12 {
+    animation: kf-opening-anime 2s 2.6s;
+  }
+  .opening-anime__text-child-13 {
+    animation: kf-opening-anime 2s 2.7s;
+  }
+  .opening-anime__text-child-14 {
+    animation: kf-opening-anime 2s 2.8s;
+  }
+  .opening-anime__text-child-15 {
+    animation: kf-opening-anime 2s 2.9s;
+  }
+  .opening-anime__text-child-16 {
+    animation: kf-opening-anime 2s 3s;
+  }
+  .opening-anime__text-child-17 {
+    animation: kf-opening-anime 2s 3.1s;
+  }
+    @keyframes kf-opening-anime {
+      0% {
+        color: #758ca0;
+        opacity: 0;
+      }
+      40% {
+        color: $color-sub;
+        -webkit-text-stroke-color: $color-main;
+        -webkit-text-stroke-width: 0.5px;
+        opacity: 1;
+      }
+      60% {
+        color: $color-sub;
+        -webkit-text-stroke-color: $color-main;
+        -webkit-text-stroke-width: 0.5px;
+        opacity: 1;
+      }
+      100% {
+        color: #758ca0;
+        opacity: 0;
+      }
+    }
+
 .main-bg{
   position: fixed;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
   padding-left: 2%;
   padding-bottom: 2%;
@@ -106,7 +190,7 @@ export default {
   font-weight: bold;
   color: $color-sub;
   z-index: -1;
-  @include color-anime;
+  animation: kf-main-bg-anime 10s infinite;
   @include mqtb {
     line-height: 1;
     font-size: 11vw;
@@ -115,29 +199,21 @@ export default {
     font-size: 12vw;
   }
 }
-
-.header-opening{
-  // transform: translateY( 50px);
-  opacity: 0;
-  // filter: blur(2px);
-  transition: 1s;
-  // animation: header-anime 2s 5s;
-}
-.header-opening--02{
-  transform: translateY( 0);
-  filter: blur(0);
-  opacity: 1;
-  // animation: header-anime 2s 5s;
-}
-//  @keyframes header-anime {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
+  @keyframes kf-main-bg-anime {
+    0% {
+      color: $color-sub;
+      // color: #fff;
+    }
+    50% {
+      color: rgb(227, 241, 255);
+      // color: rgb(231, 255, 245);
+    }
+    100% {
+      color: $color-sub;
+      // color: #fff;
+    }
+  }
+// ページ移動のトランジション
 .v-enter-active, .v-leave-active{
   transition: opacity 0.2s;
 }
