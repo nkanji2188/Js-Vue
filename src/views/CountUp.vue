@@ -82,11 +82,17 @@ export default {
           // 飛んでいくカードを追加、アニメーションの指定
           $(this)
             .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>');
-          $('.count-numbers__card-inner--02').animate({}, function(){
+          // $('.count-numbers__card-inner--02').animate({}, function(){
+          //   $('.count-numbers__card-inner--02')
+          //     .css('transform', 'rotateX(720deg) rotateY(720deg)')
+          //     .addClass('bg-color-red')
+          // })
+
+          setTimeout(animeFunc01);
+          function animeFunc01() {
             $('.count-numbers__card-inner--02')
-              .css('transform', 'rotateX(720deg) rotateY(720deg)')
-              .addClass('bg-color-red')
-          })
+              .addClass('bg-color-red').css('transform', 'rotateX(720deg) rotateY(720deg)');
+          };
           // カードが飛び始めるまでの待機時間
           setTimeout(animeFunc, 600);
           function animeFunc() {
