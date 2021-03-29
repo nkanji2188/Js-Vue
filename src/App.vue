@@ -60,7 +60,7 @@ export default {
     // アニメーション文字を一度同時表示
     setTimeout(openFunc01, 5000);
     function openFunc01() {
-      $('[class^=opening-anime__text-child-]').removeClass().addClass('opening-anime__text-child--02');
+      $('[class^=opening-anime__text-child-]').removeClass().addClass('opening-anime__text-child--second');
       // $('[class^=opening-anime__text-child-]').animate({'opacity': 1}, 800, function() {
       //   $(this).fadeOut(800, function() {
       //     $(this).remove();
@@ -91,9 +91,6 @@ export default {
     font-size: 4rem;
     line-height: 1.3;
     font-weight: bold;
-    color: $color-sub;
-    -webkit-text-stroke-color: $color-main;
-    -webkit-text-stroke-width: 0.5px;
     letter-spacing: nomal;
     @include mqtb{
       font-size: 5rem;
@@ -102,77 +99,57 @@ export default {
     @include mqpc{
       font-size: 8rem;
     }
-    & > span{
-      // opacity: 0;
-    }
   }
   .opening-anime__text-child-01 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 1.5s;
+    animation: kf-opening-anime 2s 1.5s both;
   }
   .opening-anime__text-child-02 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 1.6s;
+    animation: kf-opening-anime 2s 1.6s both;
   }
   .opening-anime__text-child-03 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 1.7s;
+    animation: kf-opening-anime 2s 1.7s both;
   }
   .opening-anime__text-child-04 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 1.8s;
+    animation: kf-opening-anime 2s 1.8s both;
   }
   .opening-anime__text-child-05 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 1.9s;
+    animation: kf-opening-anime 2s 1.9s both;
   }
   .opening-anime__text-child-06 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2s;
+    animation: kf-opening-anime 2s 2s both;
   }
   .opening-anime__text-child-07 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.1s;
+    animation: kf-opening-anime 2s 2.1s both;
   }
   .opening-anime__text-child-08 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.2s;
+    animation: kf-opening-anime 2s 2.2s both;
   }
   .opening-anime__text-child-09 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.3s;
+    animation: kf-opening-anime 2s 2.3s both;
   }
   .opening-anime__text-child-10 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.4s;
+    animation: kf-opening-anime 2s 2.4s both;
   }
   .opening-anime__text-child-11 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.5s;
+    animation: kf-opening-anime 2s 2.5s both;
   }
   .opening-anime__text-child-12 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.6s;
+    animation: kf-opening-anime 2s 2.6s both;
   }
   .opening-anime__text-child-13 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.7s;
+    animation: kf-opening-anime 2s 2.7s both;
   }
   .opening-anime__text-child-14 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.8s;
+    animation: kf-opening-anime 2s 2.8s both;
   }
   .opening-anime__text-child-15 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 2.9s;
+    animation: kf-opening-anime 2s 2.9s both;
   }
   .opening-anime__text-child-16 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 3s;
+    animation: kf-opening-anime 2s 3s both;
   }
   .opening-anime__text-child-17 {
-    opacity: 0;
-    animation: kf-opening-anime 2s 3.1s;
+    animation: kf-opening-anime 2s 3.1s both;
   }
     @keyframes kf-opening-anime {
       0% {
@@ -180,15 +157,11 @@ export default {
         opacity: 0;
       }
       40% {
-        color: $color-sub;
-        -webkit-text-stroke-color: $color-main;
-        -webkit-text-stroke-width: 0.5px;
+        @include color-opening-anime;
         opacity: 1;
       }
       60% {
-        color: $color-sub;
-        -webkit-text-stroke-color: $color-main;
-        -webkit-text-stroke-width: 0.5px;
+        @include color-opening-anime;
         opacity: 1;
       }
       100% {
@@ -196,7 +169,8 @@ export default {
         opacity: 0;
       }
     }
-  .opening-anime__text-child--02{
+  .opening-anime__text-child--second{
+    @include color-opening-anime;
     animation: kf-opening-anime02 2s both;
   }
     @keyframes kf-opening-anime02 {

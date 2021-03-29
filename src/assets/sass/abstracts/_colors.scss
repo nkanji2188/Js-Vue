@@ -54,4 +54,9 @@ $color-font-red: $palette-red;
 .bg-color-red {
   background: $palette-red !important;
 }
+@mixin color-opening-anime {
+  color: $color-sub;
+  -webkit-text-stroke-color: $color-main;
+  -webkit-text-stroke-width: 0.5px;
+}
 
