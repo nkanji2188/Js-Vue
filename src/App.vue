@@ -62,10 +62,17 @@ export default {
     function openFunc01() {
       $('[class^=opening-anime__text-child-]').removeClass().addClass('opening-anime__text-child--02');
       // $('[class^=opening-anime__text-child-]').animate({'opacity': 1}, 800, function() {
-      //   $(this).fadeOut(800)
-
+      //   $(this).fadeOut(800, function() {
+      //     $(this).remove();
+      //   });
+      // });
     }
-
+    // アニメを削除
+    setTimeout(openFunc02, 7000);
+    function openFunc02() {
+      $('.opening-anime').remove();
+      // $('#opening-hide').fadeIn(500);
+    }
   }
 
 }
@@ -190,23 +197,22 @@ export default {
       }
     }
   .opening-anime__text-child--02{
-    animation: kf-opening-hide02 1.6s 5s;
-    opacity: 0;
+    animation: kf-opening-anime02 2s both;
   }
-  @keyframes kf-opening-hide02 {
-    0% {
-      opacity: 0;
+    @keyframes kf-opening-anime02 {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
- }
 
 .opening-hide{
-  animation: kf-opening-hide 0.5s 6.5s both;
+  animation: kf-opening-hide 0.5s 6.6s both;
 }
   @keyframes kf-opening-hide {
     0% {
@@ -252,6 +258,7 @@ export default {
       // color: #fff;
     }
   }
+
 // ページ移動のトランジション
 .v-enter-active, .v-leave-active{
   transition: opacity 0.2s;
