@@ -13,6 +13,12 @@
           <router-link class="global-nav-sp__link" to="/">Home</router-link>
         </li>
         <li>
+          <router-link class="global-nav-sp__link" to="/Ajax">Ajax</router-link>
+        </li>
+        <li>
+          <router-link class="global-nav-sp__link" to="/Ajax02">Ajax02</router-link>
+        </li>
+        <li>
           <router-link class="global-nav-sp__link" to="/about">About</router-link>
         </li>
         <li>
@@ -39,6 +45,12 @@
       <ul class="global-nav__inner">
         <li class="global-nav__item">
           <router-link class="global-nav__link" to="/">Home</router-link>
+        </li>
+        <li class="global-nav__item">
+          <router-link class="global-nav__link" to="/Ajax">Ajax</router-link>
+        </li>
+        <li class="global-nav__item">
+          <router-link class="global-nav__link" to="/Ajax02">Ajax02</router-link>
         </li>
         <li class="global-nav__item">
           <router-link class="global-nav__link" to="/about">About</router-link>

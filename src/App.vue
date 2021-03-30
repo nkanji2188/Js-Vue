@@ -26,8 +26,9 @@
         </span>
       </div>
 
-      <div class="opening-hide">
-        <div class="main-bg">
+      <div class="">
+      <!-- <div class="opening-hide"> -->
+        <div class="main-bg">{{ info }}
           Abeunt<br>studia in<br>mores.
           <span class="pc-none"><br>Amat victoria curam.</span>
         </div>
@@ -50,10 +51,30 @@
 import Header from './components/Header.vue'
 
 export default {
+// new Vue({
+  el: '#app',
+  data () {
+    return {
+      info: null
+    }
+  },
+
+  mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
+      console.log(response);
+  },
   name: 'App',
   components: {
     Header
   },
+
+  // data () {
+  //   return {
+  //     msg: 'ooooooooo'
+  //   }
+  // },
 
   mounted:function() {
     // $('#opening-hide').hide();
@@ -75,6 +96,7 @@ export default {
     }
   }
 
+// })
 }
 </script>
 
