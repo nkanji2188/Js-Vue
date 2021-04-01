@@ -12,6 +12,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    // ”path”と”component”で、URLとコンポーネントが紐付けられる
     path: '/',
     name: 'Home',
     component: Home,

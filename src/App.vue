@@ -38,7 +38,7 @@
             <router-view/>
           </transition>
         </main>
-        <footer class="text-a-c pts pbs font-color-main">
+        <footer class="footer">
           <small>&copy;kanji nakahashi 2021</small>
         </footer>
       </div>
@@ -51,20 +51,6 @@
 import Header from './components/Header.vue'
 
 export default {
-// new Vue({
-  el: '#app',
-  data () {
-    return {
-      info: null
-    }
-  },
-
-  mounted () {
-    axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
-      console.log(response);
-  },
   name: 'App',
   components: {
     Header
@@ -263,4 +249,9 @@ export default {
   opacity: 0;
 }
 
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 </style>

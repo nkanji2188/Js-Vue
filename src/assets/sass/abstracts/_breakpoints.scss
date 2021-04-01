@@ -10,18 +10,26 @@ html{
     @content;
   }
 }
+@mixin mqsp-small {
+  @media screen and (max-width: 374px){
+    @content;
+  }
+}
 @mixin mqsp {
   @media screen and (max-width: 767px){
     @content;
   }
 }
-
 @mixin mqtb {
   @media screen and (min-width: 767px){
     @content;
   }
 }
-
+@mixin mqpc-not {
+  @media screen and (max-width: 960px){
+    @content;
+  }
+}
 @mixin mqpc {
   @media screen and (min-width: 960px){
     @content;

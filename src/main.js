@@ -13,6 +13,7 @@ window.$ = window.jQuery = require('jquery')
 require('./assets/sass/common.scss')
 
 Vue.config.productionTip = false
+// Vue.prototype.$axios = axios
 // Vue.use(VueAxios, axios)
 
 new Vue({

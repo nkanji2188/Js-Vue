@@ -11,7 +11,7 @@
     <section class="section container-small">
       <div class="section__head mb0">
         <h2 class="df jcsb">
-          <span class="primary-heading__text letter-s-n">Best <span class="sp-none">Record</span> : <span id="count-record">0</span></span>
+          <span class="primary-heading__text letter-s-n">Best <span class="pc-not-none">Record</span> : <span id="count-record">0</span></span>
           <span class="primary-heading__text letter-s-n">Time : <span id="count-timer">0</span></span>
         </h2>
       </div>

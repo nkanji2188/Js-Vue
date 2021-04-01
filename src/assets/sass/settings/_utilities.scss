@@ -35,11 +35,19 @@
 .flex-d-c{
   flex-direction: column !important;
 }
+.position-re{
+  position: relative !important;
+}
 .display-none {
   display: none !important;
 }
 .displey-block {
   display: block !important;
+}
+.sp-displey-block {
+  @include mqsp {
+    display: block !important;
+  }
 }
 .opacity-0 {
   opacity: 0 !important;
@@ -47,8 +55,8 @@
 .opacity-1 {
   opacity: 1 !important;
 }
-.sp-none {
-  @include mqsp {
+.pc-not-none {
+  @include mqpc-not {
     display: none !important;
   }
 }
@@ -62,6 +70,9 @@
 }
 .rotatez-7 {
   transform: rotateZ(-7deg);
+}
+.m16{
+  margin: 16px;
 }
 .mts {
   margin-top: 20px !important;
@@ -93,6 +104,9 @@
 .mrs{
  margin-right: 15px !important;
 }
+.p20{
+  padding: 20px !important;
+}
 .pts {
   padding-top: 20px !important;
 }
@@ -114,4 +128,10 @@
 }
 .pbl {
   padding-bottom: 60px !important;
+}
+.plm {
+  padding-left: 20px !important;
+}
+.prm{
+  padding-right: 20px !important; 
 }

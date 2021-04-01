@@ -4,48 +4,44 @@
 
     <h2 class="page-heading">
       <span class="page-heading__text"><span>A</span>jax</span>
-
     </h2>
 
     <section class="section container">
-      <div class="section__head">
+      <div class="section__head df jcc mbm">
+        <input v-model="keyword" placeholder="検索キーワードを入力" class="input-search">
+        <button @click="search_button" class="button-input">検索</button>
       </div>
       <div class="section__body">
-        <input v-model="keyword" placeholder="検索キーワードを入力">
-        <button id="search_button" class="button">検索</button>
-        <!-- <button @click="search_button">検索</button> -->
-        <table cellspacing="0" cellpadding="5" v-show="results">
-    <tr>
-      <th width="50">
-        <font>No</font>
-      </th>
-      <th width="200">
-        <font>Video</font>
-      </th>
-      <th width="700">
-        <font>Contents</font>
-      </th>
-    </tr>
 
-    <tr v-for="(movie, index) in results" v-bind:key="movie.id.videoId">
-      <!-- No -->
-      <td valign="top" width="50">{{ index + 1 }}</td>
-      <!-- Video -->
-      <td valign="top" width="300">
-        <a v-bind:href="'https://www.youtube.com/watch?v=' + movie.id.videoId">
-          <img width="300" height="200" v-bind:src="movie.snippet.thumbnails.medium.url">
-        </a>
-      </td>
-     <!-- titleとdescription -->
-      <td align="left" valign="top" width="700">
-        <font size="5" color="#c71585"><b>{{ movie.snippet.title }}</b></font>
-        <br>
-        {{ movie.snippet.description}}</td>
-    </tr>
-  </table>
+        <div v-show="results" class="">
+
+          <div class="df jcc fw-b">
+            <div class="search-video-head">Video</div>
+            <div class="search-video-head pc-not-none">Contents</div>
+          </div>
+
+          <div v-for="(movie, index) in results" v-bind:key="movie.id.videoId" class="search-video">
+            <!-- No Video-->
+            <div class="search-video__inner left">
+              <a v-bind:href="'https://www.youtube.com/watch?v=' + movie.id.videoId" class="position-re bg-color-sub">
+                <div class="position-re">
+                  <div class="search-video__number">{{ index + 1 }}</div>
+                  <img v-bind:src="movie.snippet.thumbnails.medium.url">
+                </div>
+              </a>
+            </div>
+            <!-- description -->
+            <div class="search-video__inner">
+              <h3 class="fz20">{{ movie.snippet.title }}</h3>
+              <p>{{ movie.snippet.description }}</p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-      <div class="section__foot">
-      </div>
+      <!-- <div class="section__foot">
+      </div> -->
     </section>
 
   </div>
@@ -87,20 +83,83 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-table {
-  border-collapse: collapse;
-  border: solid 2px #c71585;/*表全体を線で囲う*/
-}
-table th {
-  color: #fff0f5;/*文字色*/
-  background: #ff69b4;/*背景色*/
-  border: dashed 1px #c71585;
+.input-search {
+  width: 30%;
+  vertical-align: top;
+  padding: 10px;
+  background: $color-sub;
 }
 
-table td {
-  background: #fff0f5;
-  border: dashed 1px #c71585;
+.search-video-head {
+  flex: 0 0 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  position: relative;
+  @include mqpc {
+    flex: 0 0 50%;
+  }
+  &::before {
+    content: 'No';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background: rgb(130, 130, 130);
+    @include mqsp-small {
+      left: -16px;
+    }
+  }
+  &::after {
+    @include mqsp-small {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -16px;
+      padding: 20.5px;
+      background: #000;
+    }
+  }
+  & + & {
+    &::before {
+      display: none;
+    }
+  }
 }
+.search-video {
+  justify-content: center;
+  position: relative;
+  @include mqpc {
+    display: flex;
+  }
+}
+  .search-video__inner {
+    margin-bottom: 20px;
+    @include mqpc {
+      flex: 0 0 50%;
+    }
+    &.left{
+      @include mqpc {
+        padding-right: 20px;
+      }
+    }
+    & > a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .search-video__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    background: rgb(130, 130, 130);
+  }
 
 </style>

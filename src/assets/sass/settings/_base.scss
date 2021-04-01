@@ -47,12 +47,13 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // min-height: 100vh;
-  color: #333;
+  min-height: 100vh;
   // ルートのフォントサイズ10px,1.4remで14px
   font-size: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background: rgb(197, 131, 131);
   line-height: 1.5;
   position: relative;
 }
