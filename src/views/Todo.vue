@@ -21,11 +21,11 @@
       <div class="section__foot">
         <input type="text" v-model="newTitle" v-on:change="checkEntered()" placeholder="新しいタスクを追加する">
         <br>
-        <button class="button mb10" v-on:click="addToDoList()" v-bind:class={noclick:!newTitleToggle}>
+        <button class="button mb10" @click="addToDoList()" v-bind:class={noclick:!newTitleToggle}>
           [タスクを追加]
         </button>
         <br>
-        <button class="button" v-on:click="deleteToDoList()">
+        <button class="button" @click="deleteToDoList()">
           [タスクを削除]
         </button>
       </div>

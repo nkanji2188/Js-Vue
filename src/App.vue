@@ -82,7 +82,6 @@ export default {
     }
   }
 
-// })
 }
 </script>
 
@@ -251,7 +250,10 @@ export default {
 
 .footer{
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: $color-main;
 }
 </style>

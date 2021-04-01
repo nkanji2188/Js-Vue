@@ -36,7 +36,7 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
 // new Vue({
   el: '.ajax',
@@ -48,18 +48,16 @@ export default {
 
   mounted () {
     // thisで上手く行った
-    this.axios
-      .get('./data.json')
-      // .get('https://www.googleapis.com/youtube/v3/search')
-      // .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    axios
+      // .get('https://httpbin.org/get')
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
       // .get('https://data.city.kyoto.lg.jp/API/action/datastore/search.json?')
       .then(response => (this.info = response))
       // .then(response => (this.info = response.data.bpi))
-      console.log(response);
   },
   methods: {
     getIp() {
-      this.axios.get('https://httpbin.org/get')
+      axios.get('https://httpbin.org/get')
       .then((responce) => {
         alert(responce.data.origin);
       })

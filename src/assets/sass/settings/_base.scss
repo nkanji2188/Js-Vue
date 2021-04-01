@@ -48,12 +48,12 @@ html {
 
 body {
   min-height: 100vh;
+  padding-bottom: 60px;
   // ルートのフォントサイズ10px,1.4remで14px
   font-size: 1.4rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
-  background: rgb(197, 131, 131);
   line-height: 1.5;
   position: relative;
 }
@@ -90,6 +90,12 @@ a {
   }
 }
 
+button{
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
 /* change colours to suit your needs */
 ins {
   background-color:#ff9;

@@ -1,8 +1,8 @@
 .page-heading{
-  margin-top: 50px;
+  padding-top: 50px;
   text-align: center;
   @include mqtb{
-    margin-top: 60px;
+    padding-top: 60px;
     margin-bottom: 10px;
   } 
 }
