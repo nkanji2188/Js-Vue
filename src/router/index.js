@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import for2 from '../views/for2.vue'
-import Todo from '../views/Todo.vue'
-import Each from '../views/Each.vue'
 import Ajax from '../views/Ajax.vue'
-import Ajax02 from '../views/Ajax02.vue'
-// import data from '../views/data.json'
+import Todo from '../views/Todo.vue'
+import Each from '../views/test/Each.vue'
+import for2 from '../views/test/for2.vue'
+import Ajax02 from '../views/test/Ajax02.vue'
 
 Vue.use(VueRouter)
 
@@ -24,7 +23,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    component: () => import('../views/About.vue')
+    component: () => import('../views/test/About.vue')
   },
   {
     path: '/CountUp',
@@ -34,7 +33,7 @@ const routes = [
   {
     path: '/for',
     name: 'for',
-    component: () => import('../views/for.vue')
+    component: () => import('../views/test/for.vue')
   },
   {
     path: '/for2',
@@ -61,12 +60,6 @@ const routes = [
     name: 'Ajax02',
     component: Ajax02
   }
-  // ,
-  // {
-  //   path: '/data',
-  //   name: 'data',
-  //   component: data
-  // }
 ]
 
 const router = new VueRouter({

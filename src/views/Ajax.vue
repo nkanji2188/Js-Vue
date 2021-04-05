@@ -6,9 +6,9 @@
       <span class="page-heading__text"><span>A</span>jax</span>
     </h2>
 
-    <section class="section container pts">
+    <section class="section container">
       <div class="section__head df jcc mbm">
-        <input type="text" @keydown.enter="search" v-model="keyword" placeholder="検索キーワードを入力" class="input-search">
+        <input type="text" @keydown.enter="search" v-model="keyword" placeholder="検索キーワードを入力" class="input-text">
         <button @click="search" class="button-input">検索</button>
       </div>
       <div class="section__body">
@@ -40,7 +40,11 @@
         </div>
       </div>
     </section>
-    <a href="https://gist.github.com/nkanji2188/fffce4228be17c13666f5dcde4161262">このページのコードはこちら</a>
+
+    <div class="code-block">
+      <a href="https://gist.github.com/nkanji2188/fffce4228be17c13666f5dcde4161262" target="blank" class="code-block__link">本ページの主なコードはこちらからご覧になれます。</a>
+    </div>
+
   </div>
 </template>
 
@@ -93,16 +97,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.input-search {
-  width: calc(100% - 68px);
-  vertical-align: top;
-  padding: 10px;
-  background: $color-sub;
-  @include mqpc {
-    width: 40%;
-  }
-}
 
 .search-video-head {
   flex: 0 0 100%;

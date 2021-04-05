@@ -34,8 +34,32 @@
 
 .button-input{
   width: 68px;
-	// padding: 10px 20px;
-	// font-weight: bold;
   color: #fff;
   background: $color-main;
+  &.todo {
+    display: block;
+    width: auto;
+    width: 100%;
+    padding: 10px;
+    & + & {
+      margin-top: 20px;
+    }
+  }
 }
+
+// .button-code{
+// 	display: block;
+// 	position: absolute;
+// 	bottom: 60px;
+// 	width: 100%;
+// 	padding: 10px;
+// 	text-align: center;
+//   color: #fff;
+//   background: $color-main;
+// 	@include mqpc {
+// 		width: 50%;
+// 	}
+// 	& + & {
+// 		margin-top: 20px;
+// 	}
+// }

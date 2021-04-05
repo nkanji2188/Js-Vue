@@ -26,8 +26,7 @@
         </span>
       </div>
 
-      <div class="">
-      <!-- <div class="opening-hide"> -->
+      <div class="opening-hide">
         <div class="main-bg">{{ info }}
           Abeunt<br>studia in<br>mores.
           <span class="pc-none"><br>Amat victoria curam.</span>
@@ -56,14 +55,7 @@ export default {
     Header
   },
 
-  // data () {
-  //   return {
-  //     msg: 'ooooooooo'
-  //   }
-  // },
-
   mounted:function() {
-    // $('#opening-hide').hide();
     // アニメーション文字を一度同時表示
     setTimeout(openFunc01, 5000);
     function openFunc01() {
@@ -78,7 +70,6 @@ export default {
     setTimeout(openFunc02, 7000);
     function openFunc02() {
       $('.opening-anime').remove();
-      // $('#opening-hide').fadeIn(500);
     }
   }
 
@@ -228,15 +219,12 @@ export default {
   @keyframes kf-main-bg-anime {
     0% {
       color: $color-sub;
-      // color: #fff;
     }
     50% {
       color: rgb(227, 241, 255);
-      // color: rgb(231, 255, 245);
     }
     100% {
       color: $color-sub;
-      // color: #fff;
     }
   }
 
@@ -256,4 +244,5 @@ export default {
   font-size: 1.2rem;
   color: $color-main;
 }
+
 </style>

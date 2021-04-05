@@ -1,0 +1,54 @@
+.input-text {
+  width: calc(100% - 68px);
+  vertical-align: top;
+  padding: 10px;
+  background: $color-sub;
+  @include mqpc {
+    width: 40%;
+  }
+  &.todo{
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+// input[type=checkbox] {
+//   display: none;
+// }
+//   .checkbox {
+//     display: inline-block;
+//     padding: 5px 30px;
+//     cursor: pointer;
+//     position: relative;
+//     &::before {
+//       content: '';
+//       display: block;
+//       position: absolute;
+//       top: 50%;
+//       left: 2px;
+//       width: 18px;
+//       height: 18px;
+//       margin-top: -9px;
+//       background: #fff;
+//       border: 1px solid $color-main;
+//       }
+//     &::after{
+//       content: '';
+//       display: block;
+//       position: absolute;
+//       top: 50%;
+//       left: 8px;
+//       width: 5px;
+//       height: 9px;
+//       margin-top: -7px;
+//       border-right: 3px solid $color-main;
+//       border-bottom: 3px solid $color-main;
+//       opacity: 0;
+//       transform: rotate(45deg);
+//     }
+//   }
+//     input[type=checkbox]:checked + .checkbox::after {
+//       opacity: 1;
+//     }
+

@@ -1,16 +1,16 @@
 <template>
   <div id="todo">
+
     <h2 class="page-heading">
       <span class="page-heading__text">
         <span>T</span>o<span>D</span>o <span>L</span>ist
       </span>
     </h2>
+
     <section class="section container-small">
-      <div class="section__head">
-      </div>
-      <div class="section__body df jcc">
-        <ul class="">
-          <li class="" v-for="todoList in todoLists" :key="todoList.title">
+      <div class="section__body df jcc bg-color-sub">
+        <ul class="p20">
+          <li v-for="todoList in todoLists" :key="todoList.title" class="todo__list">
             <input type="checkbox" v-model="todoList.checkToggle">
             <label v-bind:class={doneTask:todoList.checkToggle}>
               {{ todoList.title }}
@@ -19,17 +19,19 @@
         </ul>
       </div>
       <div class="section__foot">
-        <input type="text" v-model="newTitle" v-on:change="checkEntered()" placeholder="新しいタスクを追加する">
-        <br>
-        <button class="button mb10" @click="addToDoList()" v-bind:class={noclick:!newTitleToggle}>
-          [タスクを追加]
+        <input type="text" @keydown.enter="addToDoList()" v-model="newTitle" @change="checkEntered()" placeholder="新しいタスクを追加する" class="input-text todo">
+        <button @click="addToDoList()" v-bind:class={noclick:!newTitleToggle} class="button-input todo">
+          タスクを追加
         </button>
-        <br>
-        <button class="button" @click="deleteToDoList()">
-          [タスクを削除]
+        <button @click="deleteToDoList()" class="button-input todo">
+          タスクを削除
         </button>
       </div>
     </section>
+
+    <div class="code-block">
+      <a href="https://gist.github.com/nkanji2188/c833e6e2a26aa992d71dda5dce0b719e" target="blank" class="code-block__link">本ページの主なコードはこちらからご覧になれます。</a>
+    </div>
 
   </div>
 </template>
@@ -41,7 +43,8 @@ export default {
       todoLists: [
         { title: '会議資料を作成する', checkToggle: false },
         { title: '取引先にメールを返信する', checkToggle: false },
-        { title: '見積書を作成する', checkToggle: false }
+        { title: '見積書を作成する', checkToggle: false },
+        { title: '新規開拓案を作成する', checkToggle: false }
       ],
       newTitleToggle: false,
       newTitle: ''
@@ -73,31 +76,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .doneTask{
-    text-decoration: line-through;
-  }
-  .noclick {
-    pointer-events: none;
-    user-select: none;
-  }
-  // .box{
-  //   padding: 20px;
-  //   background: rgb(74, 231, 68);
-  //   margin-top: 20px;
-  // }
-  // .ttl{
-  //   font-size: 50px;
-  // }
-  // .text{
-  //   font-size: 16px;
-  // }
-  // .pic{
-  //   width: 300px;
-  //   // margin: 0 auto;
-  //   &__box{
-  //     margin-top: 50px;
-  //     display: flex;
-  //     justify-content: center;
-  //   }
-  // }
+
+.todo__list{
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: $color-main;
+}
+
+.doneTask{
+  text-decoration: line-through;
+}
+.noclick {
+  pointer-events: none;
+  user-select: none;
+}
 </style>

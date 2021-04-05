@@ -8,7 +8,7 @@
       </span>
     </h2>
 
-    <section class="section container-small">
+    <section class="section container-small mts">
       <div class="section__head mb0">
         <h2 class="df jcsb">
           <span class="primary-heading__text letter-s-n">Best <span class="pc-not-none">Record</span> : <span id="count-record">0</span></span>
@@ -25,6 +25,10 @@
         </div>
       </div>
     </section>
+
+    <div class="code-block count">
+      <a href="https://gist.github.com/nkanji2188/90f42efcf1be6f0fcfe2ba003b179ce5" target="blank" class="code-block__link">本ページの主なコードはこちらからご覧になれます。</a>
+    </div>
 
   </div>
 </template>
@@ -48,7 +52,6 @@ export default {
       cardArray = [];
       playTime = 0;
       rendom = Math.ceil(Math.random()*10 + 5);
-      // rendom = 5;
 
       for (var i = 0; i <= 24; i ++) {
         cardArray.push(i);
@@ -76,7 +79,7 @@ export default {
       init();
       $('.count-numbers__card').on('click', function() {
         var num = $(this).children().html();
-        if (num == countNum){
+        if (num == countNum) {
           countNum ++;
           $(this).addClass('hit');
           // 飛んでいくカードを追加、アニメーションの指定
@@ -85,7 +88,7 @@ export default {
           $('.count-numbers__card-inner--02')
             .css({color: '#fec617', background: '#ff0000'});
           // カードが回るまでの待機時間
-          setTimeout(cardFunc01, 100);
+          setTimeout(cardFunc01, 50);
           function cardFunc01() {
             $('.count-numbers__card-inner--02')
               .css('transform', 'rotateX(720deg) rotateY(720deg)');
@@ -93,13 +96,14 @@ export default {
           // カードが飛び始めるまでの待機時間
           setTimeout(cardFunc02, 600);
           function cardFunc02() {
-            $('.count-numbers__card-inner--02').css('transform', `translate( ${Math.floor( Math.random() * 10000) -5000}px, ${Math.floor( Math.random() * 10000) -5000}px)` )
-            .fadeOut( function() {
-              $(this).remove();
+            $('.count-numbers__card-inner--02').css('transform', `translate( ${Math.floor( Math.random() * 5000) -2500}px, ${Math.floor( Math.random() * 5000) -2500}px)` )
+            .fadeOut(500, function() {
+              $(this).remove(500);
             });
           };
         }
       });
+
       // カウントダウン
       var countDown = 5;
       countFunc();
@@ -155,15 +159,12 @@ export default {
 
   }
 }
-
 </script>
 
 <style lang="scss">
 
-.count-up-vue  {
+.count-up-vue {
   overflow: hidden;
-  height: 200vh;
-  // min-height: 100vh;
 }
 
 .count-game{
@@ -230,10 +231,10 @@ export default {
   transition: 1s;
   &.fade-in{
     opacity: 1;
-    animation: count-start-fade-in 3s;
+    animation: kf-count-start-fade-in 3s;
   }
 }
-  @keyframes count-start-fade-in {
+  @keyframes kf-count-start-fade-in {
     0% {
       opacity: 0;
     }
@@ -245,7 +246,7 @@ export default {
     }
   }
 
-.count-go, .count01,.count02, .count03{
+.count-go, .count01, .count02, .count03{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -253,12 +254,12 @@ export default {
   height: 100px;
   line-height: 100px;
   text-align: center;
-  font-size: 50px;
+  font-size: 5rem;
   font-weight: bold;
   border-radius: 50%;
   color: $color-font-yellow;
   background: $palette-red;
-  animation: count-up 1s;
+  animation: kf-count-up 1s;
   opacity: 0;
 }
   .count-go{
@@ -267,7 +268,7 @@ export default {
     width: 300px;
     height: 300px;
     line-height: 300px;
-    font-size: 100px;
+    font-size: 10rem;
   }
   .count01{
     top: 60%;
@@ -281,7 +282,7 @@ export default {
     top: 40%;
     left: 70%;
   }
-  @keyframes count-up {
+  @keyframes kf-count-up {
     0% {
       opacity: 1;
       transform: scale(1, 1);
@@ -306,7 +307,7 @@ export default {
   font-size: 2.8rem;
   font-weight: bold;
   color: $color-font-yellow;
-  animation: count-end 2s 1s;
+  animation: kf-count-end 2s 1s;
   opacity: 0;
   z-index: 2;
   transform-origin: 0 0;
@@ -321,7 +322,7 @@ export default {
     transform-origin: 0 0;
   }
 }
-  @keyframes count-end {
+  @keyframes kf-count-end {
     0% {
       opacity: 1;
       transform: rotateZ(0) scale(1, 1);

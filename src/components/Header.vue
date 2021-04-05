@@ -13,28 +13,13 @@
           <router-link class="global-nav-sp__link" to="/">Home</router-link>
         </li>
         <li>
-          <router-link class="global-nav-sp__link" to="/Ajax">Ajax</router-link>
-        </li>
-        <li>
-          <router-link class="global-nav-sp__link" to="/Ajax02">Ajax02</router-link>
-        </li>
-        <li>
-          <router-link class="global-nav-sp__link" to="/about">About</router-link>
-        </li>
-        <li>
           <router-link class="global-nav-sp__link" to="/CountUp">CountUp</router-link>
         </li>
         <li>
-          <router-link class="global-nav-sp__link" to="/for">for</router-link>
-        </li>
-        <li>
-          <router-link class="global-nav-sp__link" to="/for2">for2</router-link>
+          <router-link class="global-nav-sp__link" to="/Ajax">Ajax</router-link>
         </li>
         <li>
           <router-link class="global-nav-sp__link" to="/Todo">Todo</router-link>
-        </li>
-        <li>
-          <router-link class="global-nav-sp__link" to="/Each">Each</router-link>
         </li>
       </ul>
     </nav>
@@ -47,16 +32,17 @@
           <router-link class="global-nav__link" to="/">Home</router-link>
         </li>
         <li class="global-nav__item">
+          <router-link class="global-nav__link" to="/CountUp">CountUp</router-link>
+        </li>
+        <li class="global-nav__item">
           <router-link class="global-nav__link" to="/Ajax">Ajax</router-link>
         </li>
         <li class="global-nav__item">
+          <router-link class="global-nav__link" to="/Todo">Todo</router-link>
+        </li>
+
+        <li class="global-nav__item">
           <router-link class="global-nav__link" to="/Ajax02">Ajax02</router-link>
-        </li>
-        <li class="global-nav__item">
-          <router-link class="global-nav__link" to="/about">About</router-link>
-        </li>
-        <li class="global-nav__item">
-          <router-link class="global-nav__link" to="/CountUp">CountUp</router-link>
         </li>
         <li class="global-nav__item">
           <router-link class="global-nav__link" to="/for">for</router-link>
@@ -65,11 +51,9 @@
           <router-link class="global-nav__link" to="/for2">for2</router-link>
         </li>
         <li class="global-nav__item">
-          <router-link class="global-nav__link" to="/Todo">Todo</router-link>
-        </li>
-        <li class="global-nav__item">
           <router-link class="global-nav__link" to="/Each">Each</router-link>
         </li>
+
       </ul>
     </nav>
 
