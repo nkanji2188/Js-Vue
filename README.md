@@ -1,4 +1,4 @@
-# spa0226
+# 
 
 ## Project setup
 ```
