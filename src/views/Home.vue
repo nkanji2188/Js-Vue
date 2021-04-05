@@ -66,7 +66,7 @@
 
     <div class="code-block home">
       <a href="https://gist.github.com/nkanji2188/89767d037f6cad504a2e1a25916bf316" target="blank" class="code-block__link home">本サイトのメイン、App.vueのコードはこちらからご覧になれます。</a>
-      <a href="https://gist.github.com/nkanji2188/c833e6e2a26aa992d71dda5dce0b719e" target="blank" class="code-block__link home">本ページの主なコードはこちらからご覧になれます。</a>
+      <a href="https://github.com/nkanji2188/Js-Vue.git" target="blank" class="code-block__link home">本サイトの全コードはこちらです。</a>
     </div>
 
   </div>

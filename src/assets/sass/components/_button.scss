@@ -23,8 +23,6 @@
 	&::after {
 		content:'}}';
 	}
-	& + & {
-	} 
 	&.count	{
 		color: rgb(255, 255, 255);
 		border-top: 1px solid #fff;

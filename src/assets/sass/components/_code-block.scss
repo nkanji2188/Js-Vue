@@ -1,13 +1,10 @@
 .code-block {
 	display: flex;
 	justify-content: center;
+	margin-top: 100px;
 	&.home {
 		align-items: center;
 		flex-direction: column;
-		margin-top: 100px;
-	}
-	&.count {
-		margin-top: 100px;
 	}
 }
 	.code-block__link{

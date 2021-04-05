@@ -26,7 +26,7 @@
       </div>
     </section>
 
-    <div class="code-block count">
+    <div class="code-block">
       <a href="https://gist.github.com/nkanji2188/90f42efcf1be6f0fcfe2ba003b179ce5" target="blank" class="code-block__link">本ページの主なコードはこちらからご覧になれます。</a>
     </div>
 
