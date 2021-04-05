@@ -40,8 +40,7 @@
         <li class="global-nav__item">
           <router-link class="global-nav__link" to="/Todo">Todo</router-link>
         </li>
-
-        <li class="global-nav__item">
+        <!-- <li class="global-nav__item">
           <router-link class="global-nav__link" to="/Ajax02">Ajax02</router-link>
         </li>
         <li class="global-nav__item">
@@ -52,8 +51,7 @@
         </li>
         <li class="global-nav__item">
           <router-link class="global-nav__link" to="/Each">Each</router-link>
-        </li>
-
+        </li> -->
       </ul>
     </nav>
 

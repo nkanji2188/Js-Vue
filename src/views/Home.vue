@@ -19,7 +19,7 @@
       <div class="section__body">
         <div class="text-box">
           <p class="text-box__text">本サイトは、主にJavaScriptの技術習得の為に制作いたしました。</p>
-          <p class="text-box__text">また、サイト制作環境にVue.jsを使いSPA（シングルページアプリケーション）で制作していますので、ページ移管のレスポンスがとても速くなっています。</p>
+          <p class="text-box__text">また、サイト制作環境にVue.jsを使いSPA（シングルページアプリケーション）で制作していますので、ページ移管のレスポンスがとても速くなっています。(Vueを使ってはいますが、jQueryも併用しています。)</p>
           <p class="text-box__text">各ページ下部には、そのページの主なコートが見ることが出来るリンクを設置していますので、ご覧頂ければと思います。</p>
         </div>
         <h3 class="primary-heading">

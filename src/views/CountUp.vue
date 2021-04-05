@@ -1,4 +1,3 @@
-<script></script>
 <template>
   <div class="count-up-vue">
 
@@ -34,6 +33,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   mounted: function() {
 
