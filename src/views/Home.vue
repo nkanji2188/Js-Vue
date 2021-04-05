@@ -1,4 +1,3 @@
-<script></script>
 <template>
   <div class="home-vue">
 
@@ -76,7 +75,7 @@
 export default {
   name: 'Home',
   components: {
-  },
+  }
   // data () {
   //   return {
   //     data1: 'data1',

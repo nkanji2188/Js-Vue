@@ -4,12 +4,12 @@ import router from './router'
 import store from './store'
 // import axios from 'axios'
 // import VueAxios from 'vue-axios'
-import jQuery from 'jquery'
+// import jQuery from 'jquery'
 import './assets/sass/settings/_base.scss'
 
-global.jquery = jQuery
-global.$ = jQuery
-window.$ = window.jQuery = require('jquery')
+// global.jquery = jQuery
+// global.$ = jQuery
+// window.$ = window.jQuery = require('jquery')
 require('./assets/sass/common.scss')
 
 Vue.config.productionTip = false

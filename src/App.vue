@@ -1,4 +1,3 @@
-<script></script>
 <template>
   <div id="app">
     <div class="wrapper">
@@ -48,6 +47,7 @@
 
 <script>
 import Header from './components/Header.vue'
+import $ from 'jquery'
 
 export default {
   name: 'App',
@@ -55,11 +55,11 @@ export default {
     Header
   },
 
-  mounted:function() {
+  mounted: function () {
     // アニメーション文字を一度同時表示
-    setTimeout(openFunc01, 5000);
+    setTimeout(openFunc01, 5000)
     function openFunc01() {
-      $('[class^=opening-anime__text-child-]').removeClass().addClass('opening-anime__text-child--second');
+      $('[class^=opening-anime__text-child-]').removeClass().addClass('opening-anime__text-child--second')
       // $('[class^=opening-anime__text-child-]').animate({'opacity': 1}, 800, function() {
       //   $(this).fadeOut(800, function() {
       //     $(this).remove();
@@ -67,9 +67,9 @@ export default {
       // });
     }
     // アニメを削除
-    setTimeout(openFunc02, 7000);
-    function openFunc02() {
-      $('.opening-anime').remove();
+    setTimeout(openFunc02, 7000)
+    function openFunc02 () {
+      $('.opening-anime').remove()
     }
   }
 

@@ -35,7 +35,7 @@
 <script>
 import $ from 'jquery'
 export default {
-  mounted: function() {
+  mounted: function () {
 
     var start = '#count-start',
       countNum,
@@ -43,116 +43,116 @@ export default {
       playTime,
       playTimer,
       // カードを当てる回数25枚のときは26
-      rendom;
-    init();
+      rendom
+    init()
 
     // 初期化
-    function init() {
-      countNum = 1;
-      cardArray = [];
-      playTime = 0;
-      rendom = Math.ceil(Math.random()*10 + 5);
-
-      for (var i = 0; i <= 24; i ++) {
-        cardArray.push(i);
-      }
-      for (var i = 0; i < cardArray.length; i ++) {
-        var tmpNum = cardArray[i];
-        var r = Math.floor (Math.random() * cardArray.length);
-        cardArray[i] = cardArray[r];
-        cardArray[r] = tmpNum;
-      }
-
-      $('#count-numbers').html('');
+    function init () {
+      countNum = 1
+      cardArray = []
+      playTime = 0
+      rendom = Math.ceil(Math.random() * 10 + 5)
 
       for (var i = 0; i <= 24; i++) {
-        var cardNum = cardArray[i] + 1;
+        cardArray.push(i)
+      }
+      for (var i = 0; i < cardArray.length; i++) {
+        var tmpNum = cardArray[i]
+        var r = Math.floor (Math.random() * cardArray.length)
+        cardArray[i] = cardArray[r]
+        cardArray[r] = tmpNum
+      }
+
+      $('#count-numbers').html('')
+
+      for (var i = 0; i <= 24; i++) {
+        var cardNum = cardArray[i] + 1
         $('#count-numbers')
           .prepend(
             `<div class="count-numbers__card"><div class="count-numbers__card-inner">${cardNum}</div></div>`
-          );
+          )
       }
     // end function init ()
     };
 
-    $('#count-button').on('click', function() {
-      init();
-      $('.count-numbers__card').on('click', function() {
-        var num = $(this).children().html();
+    $('#count-button').on('click', function () {
+      init()
+      $('.count-numbers__card').on('click', function () {
+        var num = $(this).children().html()
         if (num == countNum) {
-          countNum ++;
-          $(this).addClass('hit');
+          countNum++
+          $(this).addClass('hit')
           // 飛んでいくカードを追加、アニメーションの指定
           $(this)
-            .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>');
+            .prepend('<div class="count-numbers__card-inner--02"><div>HIT</div></div>')
           $('.count-numbers__card-inner--02')
-            .css({color: '#fec617', background: '#ff0000'});
+            .css({ color: '#fec617', background: '#ff0000' })
           // カードが回るまでの待機時間
-          setTimeout(cardFunc01, 50);
+          setTimeout(cardFunc01, 50)
           function cardFunc01() {
             $('.count-numbers__card-inner--02')
-              .css('transform', 'rotateX(720deg) rotateY(720deg)');
+              .css('transform', 'rotateX(720deg) rotateY(720deg)')
           };
           // カードが飛び始めるまでの待機時間
-          setTimeout(cardFunc02, 600);
-          function cardFunc02() {
-            $('.count-numbers__card-inner--02').css('transform', `translate( ${Math.floor( Math.random() * 5000) -2500}px, ${Math.floor( Math.random() * 5000) -2500}px)` )
-            .fadeOut(500, function() {
-              $(this).remove(500);
-            });
+          setTimeout(cardFunc02, 600)
+          function cardFunc02 () {
+            $('.count-numbers__card-inner--02').css('transform', `translate(${Math.floor( Math.random() * 5000) - 2500}px, ${Math.floor(Math.random() * 5000) - 2500}px)`)
+              .fadeOut(500, function () {
+                $(this).remove(500)
+              })
           };
         }
-      });
+      })
 
       // カウントダウン
-      var countDown = 5;
-      countFunc();
-      var downTimer = setInterval(countFunc, 1000);
+      var countDown = 5
+      countFunc()
+      var downTimer = setInterval(countFunc, 1000)
       function countFunc() {
-        countDown--;
-        $('#count-button').hide();
-        $('#count-start__text').hide();
-        if (countDown == 4) {
-          $(start).append('<div class="count03"><div class="rotatez10">3</div></div>');
+        countDown--
+        $('#count-button').hide()
+        $('#count-start__text').hide()
+        if (countDown === 4) {
+          $(start).append('<div class="count03"><div class="rotatez10">3</div></div>')
         }
-        if (countDown == 3) {
-          $('.count03').remove();
-          $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>');
+        if (countDown === 3) {
+          $('.count03').remove()
+          $(start).append('<div class="count02"><div class="rotatez-7">2</div></div>')
         }
-        if (countDown == 2) {
-          $('.count02').remove();
-          $(start).append('<div class="count01"><div class="rotatez10">1</div></div>');
+        if (countDown === 2) {
+          $('.count02').remove()
+          $(start).append('<div class="count01"><div class="rotatez10">1</div></div>')
         }
-        if (countDown == 1) {
-          $('.count01').remove();
-          $(start).append('<p class="count-go">GO!!</p>');
+        if (countDown === 1) {
+          $('.count01').remove()
+          $(start).append('<p class="count-go">GO!!</p>')
         }
-        if (countDown == 0) {
-          clearInterval(downTimer);
-          $('.count-go').remove();
-          $(start).hide();
-          playTimerFunc();
-          playTimer = setInterval(playTimerFunc, 10);
+        if (countDown === 0) {
+          clearInterval(downTimer)
+          $('.count-go').remove()
+          $(start).hide()
+          playTimerFunc()
+          playTimer = setInterval(playTimerFunc, 10)
         }
       };
     // end $('#count-button').on('click', function()
-    });
+    })
 
-    function playTimerFunc() {
-      playTime ++;
-      $('a').on('click', function() {
-        clearInterval(playTimer);
-      });
-      $('#count-timer').html(playTime);
-      if (countNum == rendom) {
-        clearInterval(playTimer);
+    function playTimerFunc () {
+      playTime++
+      $('a').on('click', function () {
+        clearInterval(playTimer)
+      })
+      $('#count-timer').html(playTime)
+      if (countNum === rendom) {
+        clearInterval(playTimer)
         $('#count-numbers')
-          .prepend('<div class="count-end"><div>Congratulations!!</div></div>');
-        $(start).show().addClass('fade-in');
-        $('#count-start__text').show().html(`Your Record : ${$('#count-timer').html()}` );
-        $('#count-button').show().html('PLAY AGAIN');
+          .prepend('<div class="count-end"><div>Congratulations!!</div></div>')
+        $(start).show().addClass('fade-in')
+        $('#count-start__text').show().html(`Your Record : ${$('#count-timer').html()}`)
+        $('#count-button').show().html('PLAY AGAIN')
         if ($('#count-record').html() - $('#count-timer').html() > 0 || $('#count-record').html() == 0 ) {
-          $('#count-record').html($('#count-timer').html());
+          $('#count-record').html($('#count-timer').html())
         }
       }
     };

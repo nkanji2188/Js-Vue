@@ -1,4 +1,3 @@
-<script></script>
 <template>
   <div class="ajax">
 
@@ -49,11 +48,11 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   name: 'SearchVideo',
-  data: function() {
+  data: function () {
     return {
       results: null,
       keyword: 'BREAKDANCE',
@@ -63,23 +62,23 @@ export default {
         part: 'snippet',
         type: 'video',
         maxResults: '20',
-        key: 'AIzaSyBCytdaHcN5nHHWtwmJX8zEkE2mBXilQR8',
+        key: 'AIzaSyBCytdaHcN5nHHWtwmJX8zEkE2mBXilQR8'
       }
-    };
+    }
   },
   methods: {
-    search: function() {
-      this.params.q = this.keyword;
-      var self = this;
+    search: function () {
+      this.params.q = this.keyword
+      var self = this
       axios
         .get('https://www.googleapis.com/youtube/v3/search', {
           params: this.params
         })
-        .then(function(responce) {
-          self.results = responce.data.items;
+        .then(function (responce) {
+          self.results = responce.data.items
         })
     }
-  },
+  }
   // 最初から検索を表示させる場合
   // mounted:function() {
   //   this.params.q = this.keyword;
