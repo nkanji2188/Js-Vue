@@ -2,6 +2,7 @@
   width: calc(100% - 68px);
   vertical-align: top;
   padding: 10px;
+  font-size: 16px;
   background: $color-sub;
   @include mqpc {
     width: 40%;
