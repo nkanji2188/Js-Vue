@@ -26,7 +26,7 @@
       </div>
 
       <div class="opening-hide">
-        <div class="main-bg">{{ info }}
+        <div class="main-bg">
           Abeunt<br>studia in<br>mores.
           <span class="pc-none"><br>Amat victoria curam.</span>
         </div>

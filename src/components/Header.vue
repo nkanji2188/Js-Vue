@@ -1,4 +1,3 @@
-<script></script>
 <template>
   <div class="header-vue">
 
@@ -59,6 +58,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   mounted: function() {
     $('#global-nav-sp__btn').on('click', function(){

@@ -36,7 +36,6 @@
 import $ from 'jquery'
 export default {
   mounted: function () {
-
     var start = '#count-start',
       countNum,
       cardArray,
@@ -44,8 +43,7 @@ export default {
       playTimer,
       // カードを当てる回数25枚のときは26
       rendom
-    init()
-
+    init ()
     // 初期化
     function init () {
       countNum = 1
@@ -76,10 +74,10 @@ export default {
     };
 
     $('#count-button').on('click', function () {
-      init()
+      init ()
       $('.count-numbers__card').on('click', function () {
         var num = $(this).children().html()
-        if (num == countNum) {
+        if (num === countNum) {
           countNum++
           $(this).addClass('hit')
           // 飛んでいくカードを追加、アニメーションの指定
@@ -91,7 +89,7 @@ export default {
           setTimeout(cardFunc01, 50)
           function cardFunc01() {
             $('.count-numbers__card-inner--02')
-              .css('transform', 'rotateX(720deg) rotateY(720deg)')
+              .css('transform' , 'rotateX(720deg) rotateY(720deg)')
           };
           // カードが飛び始めるまでの待機時間
           setTimeout(cardFunc02, 600)
@@ -106,9 +104,9 @@ export default {
 
       // カウントダウン
       var countDown = 5
-      countFunc()
+      countFunc ()
       var downTimer = setInterval(countFunc, 1000)
-      function countFunc() {
+      function countFunc () {
         countDown--
         $('#count-button').hide()
         $('#count-start__text').hide()
@@ -156,7 +154,6 @@ export default {
         }
       }
     };
-
   }
 }
 </script>
