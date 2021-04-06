@@ -19,7 +19,8 @@
         </ul>
       </div>
       <div class="section__foot">
-        <input type="text" @keydown.enter="addToDoList()" v-model="newTitle" @change="checkEntered()" placeholder="新しいタスクを追加する" class="input-text todo">
+        <!-- <input type="text" @keydown.enter="addToDoList()" v-model="newTitle" @change="checkEntered()" placeholder="新しいタスクを追加する" class="input-text todo"> -->
+        <input type="text" v-model="newTitle" @change="checkEntered()" placeholder="新しいタスクを追加する" class="input-text todo">
         <button @click="addToDoList()" v-bind:class={noclick:!newTitleToggle} class="button-input todo">
           タスクを追加
         </button>

@@ -77,7 +77,7 @@ export default {
       init ()
       $('.count-numbers__card').on('click', function () {
         var num = $(this).children().html()
-        if (num === countNum) {
+        if (num == countNum) {
           countNum++
           $(this).addClass('hit')
           // 飛んでいくカードを追加、アニメーションの指定
