@@ -1,7 +1,14 @@
 .text-box{
   margin-bottom: 40px;
 }
-.text-box__text{
-  display: block;
-  margin-bottom: 10px;
-}
+  .text-box__text{
+    display: block;
+    margin-bottom: 10px;
+    &.link {
+      margin-top: 30px;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+      background: $color-main;
+    }
+  }

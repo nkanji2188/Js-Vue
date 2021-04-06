@@ -19,7 +19,8 @@
         <div class="text-box">
           <p class="text-box__text">本サイトは、主にJavaScriptの技術習得の為に制作いたしました。</p>
           <p class="text-box__text">また、サイト制作環境にVue.jsを使いSPA（シングルページアプリケーション）で制作していますので、ページ移管のレスポンスがとても速くなっています。(Vueを使ってはいますが、jQueryも併用しています。)</p>
-          <p class="text-box__text">各ページ下部には、そのページの主なコートが見ることが出来るリンクを設置していますので、ご覧頂ければと思います。</p>
+          <p class="text-box__text">各ページ下部には、そのページの主なコードが見ることが出来るリンクを設置していますので、ご覧頂ければと思います。</p>
+          <a href="https://github.com/nkanji2188/Js-Vue.git" target="blank" class="text-box__text link">本サイトの全コードはこちらです。</a>
         </div>
         <h3 class="primary-heading">
           <span class="primary-heading__text line">Page Introduction</span>
@@ -65,7 +66,7 @@
 
     <div class="code-block home">
       <a href="https://gist.github.com/nkanji2188/89767d037f6cad504a2e1a25916bf316" target="blank" class="code-block__link home">本サイトのメイン、App.vueのコードはこちらからご覧になれます。</a>
-      <a href="https://github.com/nkanji2188/Js-Vue.git" target="blank" class="code-block__link home">本サイトの全コードはこちらです。</a>
+      <!-- <a href="https://github.com/nkanji2188/Js-Vue.git" target="blank" class="code-block__link home">本サイトの全コードはこちらです。</a> -->
     </div>
 
   </div>
